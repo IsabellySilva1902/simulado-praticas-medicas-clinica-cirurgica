@@ -523,6 +523,25 @@
     </div>
   </div>
 
+  <!-- Modal: escolher quantidade de questoes antes de refazer um subconjunto -->
+  <div id="quantityModal" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
+      <h4 class="text-lg font-bold text-slate-900 mb-2">Quantas questoes?</h4>
+      <p id="quantityModalMessage" class="text-sm text-slate-600 mb-4"></p>
+      <label for="quantityModalInput" class="block text-sm font-semibold text-slate-700 mb-2">Quantidade de questoes</label>
+      <input type="number" id="quantityModalInput" min="1" step="1"
+        class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigoBrand-500 focus:border-indigoBrand-500 mb-6">
+      <div class="flex items-center justify-end gap-3">
+        <button id="btnQuantityModalCancel" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-all">
+          Cancelar
+        </button>
+        <button id="btnQuantityModalConfirm" class="px-4 py-2 text-sm font-bold text-white bg-indigoBrand-600 hover:bg-indigoBrand-700 rounded-xl transition-all">
+          Comecar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const QUESTIONS_DATABASE = [
   {
@@ -5094,6 +5113,44 @@
       finishQuiz();
     });
 
+    // Modal generico de "quantas questoes" usado pelos botoes de refazer um
+    // subconjunto (foco nas dificuldades, so erradas, so marcadas, pontos
+    // fracos historicos). Cada chamador informa o total disponivel, uma
+    // mensagem contextual e uma funcao que recebe a quantidade escolhida.
+    let quantityModalOnConfirm = null;
+
+    function openQuantityModal({ total, message, onConfirm }) {
+      if (total <= 0) return;
+      document.getElementById('quantityModalMessage').textContent = message;
+      const input = document.getElementById('quantityModalInput');
+      input.min = 1;
+      input.max = total;
+      input.value = total;
+      quantityModalOnConfirm = onConfirm;
+      document.getElementById('quantityModal').classList.remove('hidden');
+      input.focus();
+      input.select();
+    }
+
+    function closeQuantityModal() {
+      document.getElementById('quantityModal').classList.add('hidden');
+      quantityModalOnConfirm = null;
+    }
+
+    document.getElementById('btnQuantityModalCancel').addEventListener('click', closeQuantityModal);
+
+    document.getElementById('btnQuantityModalConfirm').addEventListener('click', () => {
+      const input = document.getElementById('quantityModalInput');
+      const max = parseInt(input.max, 10) || 1;
+      const min = parseInt(input.min, 10) || 1;
+      let qty = parseInt(input.value, 10);
+      if (!Number.isFinite(qty)) qty = max;
+      qty = Math.min(Math.max(qty, min), max);
+      const callback = quantityModalOnConfirm;
+      closeQuantityModal();
+      if (callback) callback(qty);
+    });
+
     function finishQuiz() {
       trackQuestionTimeOnLeave();
       questionEnterTimestamp = null;
@@ -5374,21 +5431,34 @@
       const categories = JSON.parse(e.currentTarget.dataset.categories || '[]');
       if (categories.length === 0) return;
       const pool = QUESTIONS_DATABASE.filter(q => categories.includes(q.category));
-      beginQuiz(pickBalancedQuestions(pool, pool.length));
+      if (pool.length === 0) return;
+      openQuantityModal({
+        total: pool.length,
+        message: `Ha ${pool.length} questao(oes) disponiveis nos assuntos com menor aproveitamento. Quantas voce quer praticar agora?`,
+        onConfirm: (qty) => beginQuiz(pickBalancedQuestions(pool, qty))
+      });
     });
 
     document.getElementById('btnRetryWrong').addEventListener('click', (e) => {
       const ids = JSON.parse(e.currentTarget.dataset.ids || '[]');
       const questions = QUESTIONS_DATABASE.filter(q => ids.includes(q.id));
       if (questions.length === 0) return;
-      beginQuiz(shuffleArray(questions, Math.random));
+      openQuantityModal({
+        total: questions.length,
+        message: `Voce errou ${questions.length} questao(oes) nesta tentativa. Quantas voce quer refazer agora?`,
+        onConfirm: (qty) => beginQuiz(shuffleArray(questions, Math.random).slice(0, qty))
+      });
     });
 
     document.getElementById('btnRetryFlagged').addEventListener('click', (e) => {
       const ids = JSON.parse(e.currentTarget.dataset.ids || '[]');
       const questions = QUESTIONS_DATABASE.filter(q => ids.includes(q.id));
       if (questions.length === 0) return;
-      beginQuiz(shuffleArray(questions, Math.random));
+      openQuantityModal({
+        total: questions.length,
+        message: `Voce marcou ${questions.length} questao(oes) para revisao nesta tentativa. Quantas voce quer refazer agora?`,
+        onConfirm: (qty) => beginQuiz(shuffleArray(questions, Math.random).slice(0, qty))
+      });
     });
 
     document.querySelectorAll('.review-filter-btn').forEach(btn => {
@@ -5527,7 +5597,11 @@
       const wrongIds = loadWrongQuestionIds();
       const questions = QUESTIONS_DATABASE.filter(q => wrongIds.has(q.id));
       if (questions.length === 0) return;
-      beginQuiz(shuffleArray(questions, Math.random));
+      openQuantityModal({
+        total: questions.length,
+        message: `Voce tem ${questions.length} questao(oes) que ja errou em tentativas anteriores e ainda nao acertou de novo depois. Quantas voce quer revisar agora?`,
+        onConfirm: (qty) => beginQuiz(shuffleArray(questions, Math.random).slice(0, qty))
+      });
     });
 
     document.getElementById('btnExportProgress').addEventListener('click', () => {
@@ -5668,6 +5742,7 @@
     document.addEventListener('keydown', (e) => {
       if (quizScreen.classList.contains('hidden')) return;
       if (!document.getElementById('customModal').classList.contains('hidden')) return;
+      if (!document.getElementById('quantityModal').classList.contains('hidden')) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
       const key = e.key.toLowerCase();
