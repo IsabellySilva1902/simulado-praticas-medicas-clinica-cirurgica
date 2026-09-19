@@ -200,12 +200,12 @@
             Simulado Completo: Praticas Cirurgicas
           </h2>
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-            200 questoes autorais, no estilo ENAMED, cobrindo os 7 assuntos das aulas: Perioperatorio, Contaminacao e Infeccao do Sitio Cirurgico, Queimaduras, REMIT, Cicatrizacao de Feridas, Lesoes Cutaneas e Cirurgia Segura e ERAS. As questoes sao sorteadas em ordem aleatoria a cada tentativa, como em uma prova real, e os assuntos podem se cruzar nos enunciados (diagnostico diferencial entre aulas).
+            <span id="introQuestionCount">200</span> questoes, no estilo ENAMED, cobrindo os 7 assuntos das aulas: Perioperatorio, Contaminacao e Infeccao do Sitio Cirurgico, Queimaduras, REMIT, Cicatrizacao de Feridas, Lesoes Cutaneas e Cirurgia Segura e ERAS. As questoes sao sorteadas em ordem aleatoria a cada tentativa, como em uma prova real, e os assuntos podem se cruzar nos enunciados (diagnostico diferencial entre aulas).
           </p>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm font-medium text-slate-200">
             <div class="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-sm">
-              <span class="block text-xl font-bold text-white mb-0.5">200</span>
+              <span id="statQuestionCount" class="block text-xl font-bold text-white mb-0.5">200</span>
               Questoes no total (7 assuntos)
             </div>
             <div class="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-sm">
@@ -8953,6 +8953,8 @@
     });
 
     // Inicializacao: tema salvo, link de convite (?codigo=&assuntos=&qtd=) e retomada de simulado.
+    document.getElementById('introQuestionCount').textContent = QUESTIONS_DATABASE.length;
+    document.getElementById('statQuestionCount').textContent = QUESTIONS_DATABASE.length;
     applyDarkMode(safeLocalStorageGet(STORAGE_KEY_DARKMODE) === '1');
     renderHistoryUI();
     renderCoverageUI();
