@@ -6992,6 +6992,13 @@
     function saveProgress() {
       if (currentQuestions.length === 0 || isQuizSubmitted) return;
       const data = {
+        // Salva o snapshot completo das questoes desta tentativa, ja com as
+        // alternativas embaralhadas e as letras recalculadas - nao apenas os
+        // ids. Assim, ao retomar (mesmo apos fechar/recarregar a pagina), a
+        // ordem das alternativas e a letra de cada resposta ja marcada
+        // continuam exatamente as mesmas que a pessoa via na tela, em vez de
+        // reembaralhar do zero a partir do QUESTIONS_DATABASE original.
+        questions: currentQuestions,
         questionIds: currentQuestions.map(q => q.id),
         currentIndex,
         userAnswers,
@@ -7300,6 +7307,29 @@
       return arr;
     }
 
+    // Embaralha a ORDEM das alternativas de uma questao e reatribui as letras
+    // A/B/C/D conforme a nova posicao, recalculando qual letra passa a ser a
+    // correta. Nao muda o conteudo de nenhuma alternativa nem qual delas e a
+    // correta - so a posicao/letra. Retorna uma copia nova; nunca modifica o
+    // objeto original (nem QUESTIONS_DATABASE, que e compartilhado por todo
+    // o app e usado por varias telas/estatisticas).
+    //
+    // Usa sempre 'random' explicitamente informado pelo chamador. O sorteio
+    // de QUAIS questoes entram e em que ORDEM pode ser sincronizado entre
+    // usuarios via codigo de sessao (rng com seed); ja o embaralhamento das
+    // alternativas de cada questao deve usar Math.random() (nunca a rng com
+    // seed), para que duas pessoas com o mesmo codigo de sessao recebam as
+    // mesmas questoes na mesma ordem, mas cada uma veja a resposta certa
+    // atras de uma letra diferente.
+    function shuffleQuestionOptions(q, random) {
+      const letters = ['A', 'B', 'C', 'D'];
+      const correctOption = q.options.find(o => o.letter === q.correctLetter);
+      const shuffledOptions = shuffleArray(q.options, random);
+      const relabeledOptions = shuffledOptions.map((opt, idx) => ({ ...opt, letter: letters[idx] }));
+      const correctIdx = shuffledOptions.indexOf(correctOption);
+      return { ...q, options: relabeledOptions, correctLetter: letters[correctIdx] };
+    }
+
     function pickBalancedQuestions(pool, count, random, avoidRepeats) {
       const rng = random || Math.random;
       const seenIds = avoidRepeats ? loadSeenQuestionIds() : new Set();
@@ -7360,9 +7390,13 @@
     });
 
     function beginQuiz(questions, resumeState) {
-      currentQuestions = questions;
-
       if (resumeState) {
+        // Retomando uma tentativa salva: as alternativas ja foram
+        // embaralhadas/relabeladas quando a tentativa comecou, e 'questions'
+        // aqui e exatamente esse snapshot (ver btnResumeQuiz). Reembaralhar
+        // agora deixaria as respostas ja marcadas (guardadas por letra)
+        // inconsistentes com o que a pessoa via na tela.
+        currentQuestions = questions;
         currentIndex = Math.min(resumeState.currentIndex || 0, questions.length - 1);
         userAnswers = resumeState.userAnswers || {};
         flaggedQuestions = new Set(resumeState.flaggedQuestions || []);
@@ -7375,6 +7409,13 @@
         questionTimes = resumeState.questionTimes || {};
         if (resumeState.quizMode === 'tutor') { labelModeTutor.click(); } else { labelModeExam.click(); }
       } else {
+        // Simulado novo (inclusive qualquer retentativa: foco nas
+        // dificuldades, so erradas, so marcadas, pontos fracos historicos):
+        // embaralha a ordem das alternativas de cada questao e recalcula a
+        // letra correta, sempre com Math.random() (independente de qualquer
+        // codigo de sessao/seed usado para sincronizar QUAIS questoes e em
+        // que ordem entre usuarios diferentes).
+        currentQuestions = questions.map(q => shuffleQuestionOptions(q, Math.random));
         currentIndex = 0;
         userAnswers = {};
         flaggedQuestions.clear();
@@ -8278,7 +8319,13 @@
     document.getElementById('btnResumeQuiz').addEventListener('click', () => {
       const saved = loadSavedProgress();
       if (!saved) return;
-      const questions = saved.questionIds.map(id => QUESTIONS_DATABASE.find(q => q.id === id)).filter(Boolean);
+      // Prefere o snapshot ja embaralhado desta tentativa (salvo por
+      // saveProgress). So cai de volta para reconstruir a partir do
+      // QUESTIONS_DATABASE original (sem embaralhamento) se o progresso
+      // salvo for de uma versao anterior do app, sem esse snapshot.
+      const questions = Array.isArray(saved.questions) && saved.questions.length > 0
+        ? saved.questions
+        : saved.questionIds.map(id => QUESTIONS_DATABASE.find(q => q.id === id)).filter(Boolean);
       if (questions.length === 0) {
         clearSavedProgress();
         document.getElementById('resumeBanner').classList.add('hidden');
