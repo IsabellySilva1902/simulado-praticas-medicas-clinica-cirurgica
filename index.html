@@ -6943,6 +6943,582 @@
     ],
     "correctLetter": "A",
     "clinicalPointers": "Educação continuada: protocolos/evidências evoluem; sem atualização regular, a equipe mantém condutas desatualizadas sem perceber."
+  },
+  {
+    "id": 201,
+    "code": "EXT-PERI-01",
+    "category": "Perioperatorio",
+    "subcategory": "Jejum pré-operatório (ERAS/ACERTO)",
+    "difficulty": "Intermediária",
+    "prompt": "Homem, 38 anos, avaliado como risco anestésico ASA II, será submetido a colecistectomia videolaparoscópica eletiva, programada para iniciar às 16h. Segundo o Projeto ACERTO e as recomendações da ERAS Society, qual conduta deve ser adotada quanto ao jejum pré-operatório?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Manter jejum absoluto desde a meia-noite do dia anterior.",
+        "rationale": "Incorreta. Essa é a conduta antiga que os protocolos ERAS/ACERTO buscam abandonar; o jejum absoluto prolongado não traz benefício e pode até prejudicar a recuperação, sendo substituído por liberação controlada de líquidos claros."
+      },
+      {
+        "letter": "B",
+        "text": "Permitir ingestão de líquidos claros contendo carboidratos até 2 horas antes.",
+        "rationale": "CORRETA. Segundo o ERAS/ACERTO, líquidos claros (incluindo os que contêm carboidratos, como maltodextrina) são liberados até 2 horas antes da indução anestésica, reduzindo o tempo de jejum sem aumentar o risco de broncoaspiração."
+      },
+      {
+        "letter": "C",
+        "text": "Permitir ingestão de alimentos sólidos leves e líquidos claros até 3 horas antes.",
+        "rationale": "Incorreta. Alimentos sólidos, mesmo leves, exigem um intervalo de jejum bem maior que 3 horas (classicamente 6 a 8 horas, dependendo do tipo de alimento); apenas líquidos claros são liberados em intervalos curtos como 2 horas."
+      },
+      {
+        "letter": "D",
+        "text": "Oferecer líquidos claros contendo carboidratos e proteínas até 4 horas antes.",
+        "rationale": "Incorreta. O intervalo de 2 horas (não 4) é o classicamente recomendado para líquidos claros; além disso, a recomendação central envolve carboidratos (não proteínas) nesse líquido claro pré-operatório."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Líquidos claros com carboidrato: liberados até 2h antes da indução (ERAS/ACERTO). Sólidos exigem jejum bem mais longo. (Fonte: Revalida 2026/1)"
+  },
+  {
+    "id": 202,
+    "code": "EXT-PERI-02",
+    "category": "Perioperatorio",
+    "subcategory": "Íleo pós-operatório x obstrução mecânica",
+    "difficulty": "Avançada",
+    "prompt": "Homem, 58 anos, no 2º dia de pós-operatório de hemicolectomia esquerda por neoplasia de cólon, apresenta distensão abdominal progressiva, náuseas e vômitos ocasionais, sem eliminação de flatos ou fezes desde a cirurgia. Está em bom estado geral, afebril, hemodinamicamente estável. Abdome globoso, timpânico, indolor, sem sinais de peritonite; ruídos hidroaéreos diminuídos. Radiografia de abdome mostra distensão difusa de alças de delgado e cólon, SEM níveis hidroaéreos. A conduta recomendada nesse momento é:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Indicar reintervenção cirúrgica e confecção de colostomia em alça.",
+        "rationale": "Incorreta. Não há sinais de complicação cirúrgica grave (paciente estável, sem sinais de peritonite ou sepse); reoperar nesse momento é desproporcional ao quadro descrito, compatível com íleo pós-operatório simples."
+      },
+      {
+        "letter": "B",
+        "text": "Estimular deambulação precoce e considerar progressão de dieta conforme aceitação.",
+        "rationale": "CORRETA. O quadro (distensão progressiva, ausência de eliminação de flatos/fezes, distensão DIFUSA de delgado e cólon SEM níveis hidroaéreos, paciente estável) é compatível com íleo pós-operatório simples (funcional), não obstrução mecânica; a conduta inicial, alinhada aos princípios do ERAS/ACERTO, é conservadora: estimular deambulação precoce e avançar a dieta conforme tolerância, evitando intervenções desnecessárias."
+      },
+      {
+        "letter": "C",
+        "text": "Realizar descompressão colonoscópica e administrar neostigmina sob monitorização cardíaca.",
+        "rationale": "Incorreta. Essa é a conduta para a síndrome de Ogilvie (pseudo-obstrução colônica aguda), reservada a casos mais graves e refratários, geralmente com importante distensão cecal; não é a primeira conduta para um íleo pós-operatório simples de 2º dia."
+      },
+      {
+        "letter": "D",
+        "text": "Iniciar nutrição parenteral total e antibioticoterapia de amplo espectro.",
+        "rationale": "Incorreta. Não há sinais de infecção ou de incapacidade prolongada de se alimentar que justifiquem nutrição parenteral total ou antibioticoterapia empírica nesse momento; a conduta inicial é conservadora e menos invasiva."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Distensão difusa (delgado+cólon) SEM níveis hidroaéreos + paciente estável = íleo funcional, não obstrução mecânica. Conduta: deambulação precoce + dieta conforme aceitação (ERAS). (Fonte: ENAMED 2026)"
+  },
+  {
+    "id": 203,
+    "code": "EXT-PERI-03",
+    "category": "Perioperatorio",
+    "subcategory": "Febre pós-operatória - fonte pulmonar",
+    "difficulty": "Avançada",
+    "prompt": "Homem, 75 anos, diabético (metformina) e tabagista, no 4º dia de pós-operatório de colecistectomia videolaparoscópica (alta no 2º dia, evoluindo bem), é levado à urgência por confusão mental de início recente. Ao exame: Glasgow 14, temperatura 38,6°C, pulso 120 bpm, FR 26 irpm, SatO2 93% com cateter nasal, crepitações em base pulmonar direita, PA 96x60 mmHg, abdome indolor com ferida cirúrgica em bom estado, sem secreção purulenta. Qual a conduta adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Manter o paciente em regime ambulatorial e prescrever antibiótico via oral.",
+        "rationale": "Incorreta. O paciente apresenta sinais de resposta inflamatória sistêmica importante (febre, taquicardia, taquipneia, hipoxemia, confusão mental) associados a um foco pulmonar provável; esse quadro exige internação e antibioticoterapia intravenosa, não manejo ambulatorial com antibiótico oral."
+      },
+      {
+        "letter": "B",
+        "text": "Internar o paciente para realização de exames laboratoriais, e iniciar antimicrobianos via intravenosa.",
+        "rationale": "CORRETA. O quadro (febre, taquicardia, taquipneia, hipoxemia e crepitações em base pulmonar direita, com ferida operatória limpa e sem sinais de infecção) aponta para uma pneumonia como origem da síndrome de resposta inflamatória; a confusão mental no idoso é um sinal de alerta (delirium) frequentemente secundário a um quadro infeccioso sistêmico grave, exigindo internação, investigação laboratorial e antibioticoterapia intravenosa imediata."
+      },
+      {
+        "letter": "C",
+        "text": "Solicitar tomografia computadorizada de abdome com contraste e prescrever antitérmico e sintomáticos.",
+        "rationale": "Incorreta. O exame físico já aponta para uma origem pulmonar (crepitações em base direita), e o abdome é descrito como indolor com ferida em bom estado, tornando a investigação abdominal extensa menos prioritária que a estabilização e o tratamento do provável foco pulmonar."
+      },
+      {
+        "letter": "D",
+        "text": "Solicitar tomografia computadorizada do encéfalo e prescrever haloperidol.",
+        "rationale": "Incorreta. Atribuir a confusão mental diretamente a uma causa neurológica primária ou tratá-la apenas sintomaticamente com haloperidol ignora a causa mais provável: delirium secundário a um quadro infeccioso sistêmico (pneumonia), que precisa ser tratado na origem."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Confusão mental no idoso pós-operatório + febre + achado pulmonar = pensar em delirium secundário a infecção sistêmica, não causa neurológica primária. (Fonte: Revalida 2022/2)"
+  },
+  {
+    "id": 204,
+    "code": "EXT-PERI-04",
+    "category": "Perioperatorio",
+    "subcategory": "Febre pós-operatória - foco intra-abdominal",
+    "difficulty": "Avançada",
+    "prompt": "Homem, 53 anos, submetido a laparotomia de emergência por diverticulite perfurada (sigmoidectomia + colostomia a Hartmann) há 7 dias. Desde o 2º dia de pós-operatório, apresenta febre intermitente de até 39°C e distensão abdominal persistente, sem conseguir se alimentar. Ao exame: febre 38,9°C, FC 114, FR 22, PA 110x70, abdome distendido, hipertimpânico, doloroso à palpação profunda difusa, ferida operatória limpa e seca sem sinais flogísticos, colostomia com bom aspecto. Em uso de ciprofloxacino e metronidazol IV. Leucócitos 21.500 com 4% de bastões. Qual o diagnóstico mais provável e a investigação mais adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Pneumonia pós-operatória; radiografia de tórax AP e perfil.",
+        "rationale": "Incorreta. O exame pulmonar não mostra achados relevantes (murmúrio vesicular apenas discretamente diminuído em bases, sem ruídos adventícios), enquanto o quadro abdominal (distensão persistente, dor difusa) é muito mais proeminente e sugestivo, direcionando a investigação para o abdome, não o tórax."
+      },
+      {
+        "letter": "B",
+        "text": "Infecção de trato urinário; urina tipo 1, urocultura e antibiograma.",
+        "rationale": "Incorreta. Não há descrição de sintomas urinários ou de sinal de Giordano positivo no caso (aliás, foi mencionado como negativo em outro ponto da avaliação), tornando a ITU uma hipótese menos provável frente ao quadro abdominal predominante."
+      },
+      {
+        "letter": "C",
+        "text": "Sepse; hemocultura, urocultura e cultura de secreção do sítio cirúrgico.",
+        "rationale": "Incorreta. \"Sepse\" descreve uma síndrome, não uma origem/foco; além disso, cultura de secreção do sítio cirúrgico não ajudaria, já que a ferida operatória está limpa e sem sinais de infecção, não sendo a fonte provável do quadro."
+      },
+      {
+        "letter": "D",
+        "text": "Infecção intra-abdominal; tomografia computadorizada de abdome e pelve.",
+        "rationale": "CORRETA. O quadro de febre persistente, distensão abdominal importante, dor difusa à palpação profunda, leucocitose com desvio à esquerda, mesmo já em uso de antibióticos de amplo espectro, após uma cirurgia de alto risco para complicação (diverticulite perfurada com sigmoidectomia), é altamente sugestivo de uma coleção ou infecção intra-abdominal (como abscesso ou deiscência de coto retal); a tomografia de abdome e pelve é o exame mais adequado para identificar essa complicação."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Febre persistente pós-op + distensão/dor abdominal + ferida limpa = pensar em foco intra-abdominal (abscesso/coleção), não na ferida. (Fonte: Revalida 2023/2)"
+  },
+  {
+    "id": 205,
+    "code": "EXT-CONT-01",
+    "category": "ISC",
+    "subcategory": "Timing da antibioticoprofilaxia",
+    "difficulty": "Intermediária",
+    "prompt": "Uma paciente de 25 anos foi submetida à ressecção eletiva de segmento de cólon sigmoide (cerca de 10 cm) por estenose intestinal por endometriose. No pré-operatório, foi feito apenas preparo de cólon distal com clister. A cirurgia durou 4 horas, sem extravasamento de fezes na abertura colônica, com anastomose primária. Para esse caso, a antibioticoprofilaxia adequada deve ser feita:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "No momento da incisão, com dose única.",
+        "rationale": "Incorreta. A administração deve ocorrer ANTES da incisão (até 60 minutos antes), não no momento exato da incisão; além disso, uma cirurgia de 4 horas pode exigir repique, dependendo da meia-vida do antibiótico escolhido."
+      },
+      {
+        "letter": "B",
+        "text": "No momento da incisão, com repetição da dose a cada 2 a 4 horas e manter por 24 horas após a cirurgia.",
+        "rationale": "Incorreta. Novamente, a primeira dose deve ser dada ANTES da incisão (até 60 min antes), não no momento exato dela; a lógica de repique durante a cirurgia está correta, mas o início no momento da incisão já compromete a eficácia da primeira dose."
+      },
+      {
+        "letter": "C",
+        "text": "Até uma hora antes da incisão, com repetição da dose a cada 2 a 4 horas e manter por 48 horas após a cirurgia.",
+        "rationale": "Incorreta. O início até 1 hora antes da incisão e o repique durante a cirurgia estão corretos; porém, manter a profilaxia por 48 horas após a cirurgia ultrapassa o recomendado, favorecendo resistência bacteriana sem benefício adicional comprovado."
+      },
+      {
+        "letter": "D",
+        "text": "Até uma hora antes da incisão, com repetição da dose a cada 2 ou 4 horas apenas durante o ato operatório.",
+        "rationale": "CORRETA. A antibioticoprofilaxia deve começar até 60 minutos antes da incisão, ser repicada durante a cirurgia conforme a meia-vida do antibiótico (a cada 2-4h, especialmente relevante numa cirurgia de 4h como essa), e não deve ser prolongada rotineiramente além do próprio ato operatório; nesse caso, sem contaminação fecal e com boa técnica, não há indicação de estender a profilaxia para o pós-operatório."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Antibioticoprofilaxia: iniciar até 1h antes, repicar conforme a meia-vida durante a cirurgia, sem necessidade de prolongar rotineiramente além do ato operatório. (Fonte: Revalida 2020)"
+  },
+  {
+    "id": 206,
+    "code": "EXT-CONT-02",
+    "category": "ISC",
+    "subcategory": "Febre pós-operatória - infecção do sítio cirúrgico profundo",
+    "difficulty": "Avançada",
+    "prompt": "Paciente, 68 anos, submetido a hemicolectomia esquerda por neoplasia com anastomose término-terminal, sem intercorrências. No 5º dia de pós-operatório, refere dor leve abdominal. Ao exame: hidratado, temperatura 38,1°C, FC 96, PA 100x70, FR 20, abdome distendido 1+/4+, ruídos hidroaéreos presentes, timpanismo generalizado, dor leve à palpação profunda generalizada, ferida operatória limpa sem sinais flogísticos. Qual a origem mais provável da febre?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Atelectasia.",
+        "rationale": "Incorreta. Atelectasia é causa clássica de febre nas primeiras 24 a 72 horas de pós-operatório, tipicamente com achados respiratórios; o caso já está no 5º dia, sem queixas ou achados respiratórios relevantes, tornando essa hipótese menos provável."
+      },
+      {
+        "letter": "B",
+        "text": "Infecção urinária.",
+        "rationale": "Incorreta. Não há descrição de sintomas urinários, sinais de irritação vesical ou outros achados que apontem para essa origem específica no caso descrito."
+      },
+      {
+        "letter": "C",
+        "text": "Abscesso subfrênico.",
+        "rationale": "Incorreta. O abscesso subfrênico é mais tipicamente associado a cirurgias do andar superior do abdome (gástricas, esplênicas, hepatobiliares); a hemicolectomia esquerda não é a cirurgia classicamente associada a essa complicação específica."
+      },
+      {
+        "letter": "D",
+        "text": "Infecção do sítio cirúrgico profundo.",
+        "rationale": "CORRETA. No 5º dia de pós-operatório (dentro da janela de febre associada a infecção do sítio cirúrgico, ITU, pneumonia ou TVP/TEP), com ferida operatória SUPERFICIAL limpa mas abdome distendido e doloroso, a hipótese mais provável é uma infecção do sítio cirúrgico PROFUNDO (envolvendo fáscia/músculo ou órgão/espaço, como uma coleção relacionada à anastomose), já que a ferida superficial normal não exclui um foco mais profundo."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Ferida superficial limpa NÃO exclui infecção PROFUNDA/cavitária; abdome distendido e doloroso após anastomose sugere foco profundo. (Fonte: Revalida 2024/1)"
+  },
+  {
+    "id": 207,
+    "code": "EXT-CONT-03",
+    "category": "ISC",
+    "subcategory": "Antibioticoprofilaxia - dose, momento e duração",
+    "difficulty": "Intermediária",
+    "prompt": "Paciente, 67 anos, 72 kg, será submetido a correção eletiva de hérnia incisional (cirurgia limpa, sem contaminação, sem entrada em trato colonizado). Creatinina normal. Qual a antibioticoprofilaxia adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2g de cefazolina (EV) 60 minutos antes da cirurgia; 1g de cefazolina (EV) a cada 4 horas durante a cirurgia, após a dose de indução; descontinuar após o fechamento da pele.",
+        "rationale": "CORRETA. A dose padrão de cefazolina é 2g EV (sobe para 3g apenas acima de 120 kg, o que não é o caso aqui), administrada até 60 minutos antes da incisão; durante a cirurgia, repica-se a dose conforme a meia-vida do antibiótico (a cada 4 horas, aproximadamente); e, por se tratar de cirurgia limpa sem prótese, a profilaxia deve ser descontinuada ao final do próprio ato operatório, sem necessidade de estender para o pós-operatório."
+      },
+      {
+        "letter": "B",
+        "text": "1g de cefazolina (EV) e 1g de metronidazol (EV) 60 minutos antes da cirurgia; não indicar doses adicionais durante o procedimento nem no pós-operatório.",
+        "rationale": "Incorreta. A dose de cefazolina está subdimensionada (deveria ser 2g, não 1g, para esse paciente); além disso, metronidazol não é indicado nessa cirurgia limpa (herniorrafia), sendo reservado a procedimentos com risco de contaminação por anaeróbios, como cirurgias colorretais."
+      },
+      {
+        "letter": "C",
+        "text": "1g de cefazolina (EV) 60 minutos antes da cirurgia; 1g de cefazolina (EV) a cada 4 horas durante a cirurgia; manter por 72 horas após o fechamento da pele.",
+        "rationale": "Incorreta. A dose inicial está subdimensionada (1g em vez de 2g); além disso, manter a profilaxia por 72 horas após a cirurgia ultrapassa muito o recomendado (suspensão em até 24h, geralmente já ao final do ato operatório em casos limpos como este)."
+      },
+      {
+        "letter": "D",
+        "text": "2g de cefazolina (EV) e 1g de metronidazol (EV) imediatamente antes da incisão; repetir as doses a cada 4 horas até fechar a pele; descontinuar no pós-operatório.",
+        "rationale": "Incorreta. A administração deveria ocorrer até 60 minutos ANTES da incisão (não \"imediatamente antes\"); além disso, o metronidazol não é indicado nessa cirurgia limpa, sem risco de contaminação por anaeróbios."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Cirurgia limpa: cefazolina 2g (3g se >120kg), até 60min antes, repicar conforme meia-vida, descontinuar ao fechar a pele (sem metronidazol, sem prolongar). (Fonte: Revalida 2024/1)"
+  },
+  {
+    "id": 208,
+    "code": "EXT-CONT-04",
+    "category": "ISC",
+    "subcategory": "Cirurgia limpa sem prótese - antibioticoprofilaxia não indicada",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher, 45 anos, hipertensa controlada, IMC 20 kg/m², é submetida a correção de hérnia umbilical em regime ambulatorial, sob anestesia local. O anel herniário tem cerca de 1,5 cm de diâmetro, e o cirurgião opta pela correção sem uso de tela de reforço. Em relação ao uso profilático de antibióticos, é correto afirmar que a:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Antibioticoprofilaxia é justificada por conta da hipertensão arterial.",
+        "rationale": "Incorreta. A presença de hipertensão controlada, isoladamente, não é indicação de antibioticoprofilaxia cirúrgica; a decisão se baseia principalmente na classificação da cirurgia quanto ao potencial de contaminação e a fatores como uso de prótese."
+      },
+      {
+        "letter": "B",
+        "text": "Cirurgia realizada é considerada limpa, sem indicação de antibioticoprofilaxia.",
+        "rationale": "CORRETA. Trata-se de uma cirurgia limpa (sem entrada em trato colonizado, sem contaminação) e, além disso, sem uso de tela ou outro material protético; nessas condições, a antibioticoprofilaxia geralmente não é indicada, pois o risco basal de infecção é baixo e o benefício da profilaxia não supera os riscos de uso desnecessário de antibiótico."
+      },
+      {
+        "letter": "C",
+        "text": "Cirurgia foi realizada sob anestesia local, dispensando a antibioticoprofilaxia.",
+        "rationale": "Incorreta. O tipo de anestesia (local, regional ou geral) não é, isoladamente, o critério que determina a necessidade de antibioticoprofilaxia; o que importa é a classificação da cirurgia quanto ao potencial de contaminação e a presença ou não de prótese."
+      },
+      {
+        "letter": "D",
+        "text": "Antibioticoprofilaxia está indicada, pois a cirurgia ocorreu em regime ambulatorial.",
+        "rationale": "Incorreta. O regime ambulatorial (versus internação) também não é, isoladamente, critério para indicar antibioticoprofilaxia; a decisão continua se baseando na classificação de contaminação da cirurgia e nos fatores de risco específicos do procedimento."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Cirurgia limpa sem prótese: antibioticoprofilaxia geralmente NÃO indicada. O motivo certo é a classificação da cirurgia, não anestesia/regime/comorbidade isolada. (Fonte: Revalida 2024/2)"
+  },
+  {
+    "id": 209,
+    "code": "EXT-QUEI-01",
+    "category": "Queimaduras",
+    "subcategory": "Queimadura elétrica e mioglobinúria",
+    "difficulty": "Avançada",
+    "prompt": "Mulher, 43 anos, 80 kg, sofreu queimadura elétrica na perna há 1 hora, com pequenas lesões visíveis (5 cm na coxa direita e 2 cm no pé, próximo ao maléolo). Sinais vitais estáveis. Após hidratação venosa e sondagem vesical, notou-se diurese de 80 mL de urina um pouco mais escura que o habitual. Hemograma e creatinina normais. Após internação e curativo das lesões, a conduta imediata adequada é indicar:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Hidratação venosa com Ringer lactato pela fórmula de Parkland e dar alta hospitalar à paciente.",
+        "rationale": "Incorreta. A fórmula de Parkland (baseada na %SCQ visível) não é o cálculo adequado aqui, já que a lesão elétrica causa dano profundo desproporcional à pequena área cutânea visível; além disso, dar alta com urina escura (suspeita de mioglobinúria) é inseguro."
+      },
+      {
+        "letter": "B",
+        "text": "Hidratação venosa com soro fisiológico 0,9% até atingir débito urinário de 60 a 80 mL/hora.",
+        "rationale": "Incorreta. O soro fisiológico não é o cristaloide de escolha na reposição do queimado (prefere-se Ringer lactato); além disso, a meta de diurese de 60-80 mL/h é a meta padrão, insuficiente diante da suspeita de mioglobinúria, que exige diurese mais alta para \"lavar\" o pigmento dos túbulos renais."
+      },
+      {
+        "letter": "C",
+        "text": "Hidratação venosa com Ringer lactato até atingir débito urinário de 100 a 200 mL/hora.",
+        "rationale": "CORRETA. Diante de urina mais escura após queimadura elétrica, a suspeita é mioglobinúria por rabdomiólise (a corrente elétrica lesa músculo profundo desproporcionalmente à pequena área de pele visivelmente queimada); a conduta é hidratar com Ringer lactato visando uma diurese mais alta que a meta padrão (cerca de 100 a 200 mL/hora no adulto), para reduzir o depósito de mioglobina nos túbulos renais e o risco de lesão renal aguda."
+      },
+      {
+        "letter": "D",
+        "text": "Hidratação venosa com soro fisiológico 0,9% até atingir débito urinário de 80 a 100 mL/hora e fasciotomia da coxa direita.",
+        "rationale": "Incorreta. Soro fisiológico não é o cristaloide preferido; além disso, não há descrição de sinais de síndrome compartimental (dor desproporcional, tensão do compartimento) que justifique fasciotomia neste momento."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Queimadura elétrica com urina escura = suspeitar mioglobinúria. Hidratar com Ringer lactato visando diurese mais alta (~100-200 mL/h no adulto), não a meta padrão. (Fonte: Revalida 2020)"
+  },
+  {
+    "id": 210,
+    "code": "EXT-QUEI-02",
+    "category": "Queimaduras",
+    "subcategory": "Cálculo de Parkland com Lund-Browder pediátrico",
+    "difficulty": "Avançada",
+    "prompt": "Escolar de 5 anos, pesando 20 kg, apresenta queimaduras de 2º e 3º graus que atingem ambos os membros inferiores integralmente, e o tórax e o abdome anteriores. Pelo diagrama de Lund-Browder para a faixa de 5 anos: cabeça = 6,5% (valor único, já somando as duas metades), tórax e abdome anteriores = 13% (valor único de superfície anterior), e cada perna soma 17% quando queimada por completo (frente e verso). Qual o volume de reposição volêmica pela fórmula de Parkland?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1.880 mL nas primeiras 8 horas, e mais 1.880 mL nas 16 horas seguintes (total de 3.760 mL em 24 horas).",
+        "rationale": "CORRETA. SCQ = ambos os membros inferiores completos (2 x 17% = 34%) + tórax e abdome anteriores (13%) = 47% de SCQ. Pela fórmula de Parkland: 4 mL x 20 kg x 47% = 3.760 mL em 24 horas; a regra é infundir METADE desse volume (1.880 mL) nas primeiras 8 horas, contadas a partir do momento da queimadura, e a outra metade (1.880 mL) nas 16 horas seguintes."
+      },
+      {
+        "letter": "B",
+        "text": "3.760 mL administrados integralmente nas primeiras 8 horas.",
+        "rationale": "Incorreta. O valor de 3.760 mL corresponde corretamente ao volume TOTAL das 24 horas, mas administrar esse total inteiro já nas primeiras 8 horas está errado; a regra de Parkland exige a divisão em duas metades (8h + 16h), não a infusão total antecipada."
+      },
+      {
+        "letter": "C",
+        "text": "940 mL nas primeiras 8 horas, e 2.820 mL nas 16 horas seguintes.",
+        "rationale": "Incorreta. Essa distribuição inverte a lógica da fórmula: a maior parte do volume deve ser dada logo nas primeiras 8 horas (quando a perda capilar é mais intensa), não concentrada nas 16 horas seguintes."
+      },
+      {
+        "letter": "D",
+        "text": "3.760 mL administrados de forma uniforme ao longo de 24 horas (cerca de 157 mL/hora constantes).",
+        "rationale": "Incorreta. A administração uniforme ao longo de 24h não segue a lógica da fórmula de Parkland, que prevê maior infusão nas primeiras 8 horas (fase de maior extravasamento capilar) e redução na segunda metade do período."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "SCQ pelo Lund-Browder (some as áreas queimadas usando a tabela por idade). Parkland: 4xpesox%SCQ = volume total em 24h; METADE nas primeiras 8h, metade nas 16h seguintes. (Fonte: Revalida 2026/2)"
+  },
+  {
+    "id": 211,
+    "code": "EXT-QUEI-03",
+    "category": "Queimaduras",
+    "subcategory": "Queimadura elétrica - trajeto da corrente",
+    "difficulty": "Intermediária",
+    "prompt": "Homem, 35 anos, pedreiro, sofreu queimadura ao encostar em um fio elétrico durante manutenção em casa, caindo da laje. Apresentou lesão de entrada no ombro direito e lesão de saída no pé esquerdo. Foi encontrado desacordado, recuperando a consciência no trajeto ao hospital, com amnésia do episódio mas orientado quanto à própria identificação. Queixa-se de dor na região lateral direita do tórax e na hemiface direita. Assinale a alternativa correta sobre esse caso.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A perda de consciência apresentada pelo paciente é evidência de arritmia cardíaca causada pelo choque.",
+        "rationale": "Incorreta. A perda de consciência em queimadura elétrica pode ter múltiplas causas (efeito direto da corrente sobre o sistema nervoso central, queda associada, entre outras), não sendo, isoladamente, evidência confirmada de arritmia cardíaca; essa seria uma conclusão precipitada sem monitorização cardíaca que a confirme."
+      },
+      {
+        "letter": "B",
+        "text": "A queimadura elétrica causa lesões de entrada e saída que não correspondem ao trajeto real da corrente.",
+        "rationale": "CORRETA. Um dos pontos centrais do manejo de queimaduras elétricas é que as lesões cutâneas visíveis de entrada e saída não refletem com precisão o trajeto real percorrido pela corrente elétrica dentro do corpo; a corrente pode seguir caminhos imprevisíveis através de tecidos profundos (nervos, vasos, músculos), causando dano extenso e desproporcional ao que se vê na pele, como sugerido pela dor torácica e facial do paciente, distantes dos pontos de entrada/saída."
+      },
+      {
+        "letter": "C",
+        "text": "As lesões cutâneas apresentadas pelo paciente no momento do trauma definem o grau de profundidade da queimadura.",
+        "rationale": "Incorreta. Ao contrário do que essa afirmativa sugere, a extensão cutânea visível costuma SUBESTIMAR a real profundidade e extensão do dano tecidual em queimaduras elétricas, dado o percurso imprevisível da corrente por estruturas profundas."
+      },
+      {
+        "letter": "D",
+        "text": "A extensão das lesões cutâneas apresentadas pelo paciente no momento do trauma não tem relação com a gravidade do caso.",
+        "rationale": "Incorreta. Embora a extensão cutânea visível subestime o dano real, isso não significa ausência total de relação com a gravidade; a afirmativa é absoluta demais e desconsidera que as lesões cutâneas ainda são um dado clínico relevante, apenas insuficiente isoladamente."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Queimadura elétrica: lesões de entrada/saída NÃO refletem o trajeto real da corrente; dano profundo pode ser bem maior que o visível na pele. (Fonte: Revalida 2022/2)"
+  },
+  {
+    "id": 212,
+    "code": "EXT-QUEI-04",
+    "category": "Queimaduras",
+    "subcategory": "Critério de transferência - passagem de corrente",
+    "difficulty": "Intermediária",
+    "prompt": "Adolescente, 12 anos, relata choque elétrico ao manusear um cabo de energia, sem perda de consciência, estável hemodinamicamente. Ao exame: roupas chamuscadas, queimadura de 1º grau em todo o membro superior direito e no pescoço, além de uma área esbranquiçada, profunda, de 1 cm, no calcâneo direito. O médico solicita transferência para uma unidade de tratamento de queimados. Qual critério justifica essa transferência?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Queimadura de qualquer profundidade, desde que em área maior que 10% da superfície corporal.",
+        "rationale": "Incorreta. A extensão descrita no caso é pequena (lesão de 1 cm no calcâneo mais uma área de 1º grau, que sequer entra no cálculo da SCQ); a área não ultrapassa 10% da superfície corporal, então esse não é o critério que justifica a transferência aqui."
+      },
+      {
+        "letter": "B",
+        "text": "Queimadura de profundidade até segundo grau em 5% da superfície corporal.",
+        "rationale": "Incorreta. A lesão no calcâneo é descrita como profunda (área esbranquiçada), não uma queimadura até segundo grau apenas; além disso, a extensão total está bem abaixo de 5% da superfície corporal."
+      },
+      {
+        "letter": "C",
+        "text": "Queimadura elétrica em extremidade do corpo, com passagem de corrente.",
+        "rationale": "CORRETA. A presença de lesões em pontos distintos (membro superior/pescoço e calcâneo) sugere que a corrente elétrica atravessou o corpo do paciente (entrada e saída em extremidades diferentes); mesmo em baixa voltagem, a passagem de corrente pelo corpo é, por si só, critério de transferência para avaliação especializada, pelo risco de dano tecidual profundo desproporcional às lesões cutâneas visíveis, incluindo risco cardíaco."
+      },
+      {
+        "letter": "D",
+        "text": "Queimadura elétrica de baixa voltagem, com formação de arco voltaico.",
+        "rationale": "Incorreta. O caso não descreve formação de arco voltaico (lesão por calor à distância, sem contato direto prolongado); descreve sim uma lesão compatível com passagem de corrente através do corpo (do membro superior ao calcâneo), que é o critério realmente presente."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Queimadura elétrica com passagem de corrente pelo corpo (pontos de entrada/saída distintos) transfere, mesmo em baixa voltagem. (Fonte: Revalida 2023/1)"
+  },
+  {
+    "id": 213,
+    "code": "EXT-QUEI-05",
+    "category": "Queimaduras",
+    "subcategory": "Classificação e reposição volêmica pela regra dos nove",
+    "difficulty": "Avançada",
+    "prompt": "Homem, 30 anos, 90 kg, sofre queimadura ao acender uma churrasqueira, com lesões em face anterior do tronco, face anterior e posterior de ambos os membros superiores, e face anterior de um membro inferior. Consciente, com muita dor. Ao exame: eritema em todas as áreas atingidas, com múltiplas bolhas, principalmente em tórax, antebraços, mãos, perna e pé. Considerando a regra dos nove preconizada pelo ATLS, qual a classificação da queimadura e a reposição volêmica indicada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Queimadura grave, de segundo grau; Ringer lactato, cerca de 1.013 mL/hora nas primeiras 8 horas, seguido de aproximadamente 506 mL/hora nas 16 horas seguintes.",
+        "rationale": "CORRETA. A presença de eritema com múltiplas bolhas confirma 2º grau (não 3º, que seria pele seca e indolor). Pela regra dos nove: tronco anterior (18%) + ambos os membros superiores completos, incluindo face anterior e posterior (9% cada, 18% no total) + face anterior de um membro inferior (metade de 18% = 9%) = 45% de SCQ, bem acima dos 20% que definem grande queimado no adulto (queimadura grave). Pela fórmula de Parkland: 4 mL x 90 kg x 45% = 16.200 mL em 24h; metade (8.100 mL) nas primeiras 8h equivale a aproximadamente 1.013 mL/hora, e a outra metade nas 16h seguintes equivale a aproximadamente 506 mL/hora."
+      },
+      {
+        "letter": "B",
+        "text": "Queimadura moderada, de terceiro grau; reposição com colóide nas primeiras 8 horas, seguido de Ringer lactato por 16 horas.",
+        "rationale": "Incorreta. A presença de múltiplas bolhas é achado de 2º grau, não de 3º; além disso, colóide não é o cristaloide padrão da reposição inicial do queimado, que é feita com Ringer lactato desde o início."
+      },
+      {
+        "letter": "C",
+        "text": "Queimadura grave, de terceiro grau; Ringer lactato, cerca de 506 mL/hora nas primeiras 8 horas, seguido de aproximadamente 1.013 mL/hora nas 16 horas seguintes.",
+        "rationale": "Incorreta. Além de a profundidade correta ser 2º grau (não 3º, dada a presença de bolhas), a distribuição do volume está invertida: deve-se infundir o volume MAIOR nas primeiras 8 horas, não nas 16 horas seguintes."
+      },
+      {
+        "letter": "D",
+        "text": "Queimadura moderada, de segundo grau; reposição hídrica oral, 0,5 mL/kg/hora por 48 horas, com monitorização da diurese.",
+        "rationale": "Incorreta. A reposição em grande queimado deve ser endovenosa (não oral) nas primeiras horas; além disso, com 45% de SCQ, a classificação correta é queimadura grave, não moderada."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Bolhas = 2º grau (não 3º). SCQ >20% no adulto = grave/grande queimado. Parkland: metade do volume total nas 8h iniciais, metade nas 16h seguintes. (Fonte: Revalida 2024/2)"
+  },
+  {
+    "id": 214,
+    "code": "EXT-LESO-01",
+    "category": "LesoesCutaneas",
+    "subcategory": "Melanoma acral (localização plantar)",
+    "difficulty": "Intermediária",
+    "prompt": "Paciente de 58 anos, trabalhador rural, procura o ambulatório de dermatologia com queixa de sangramento frequente em lesão pruriginosa na região plantar direita há 30 dias. Ao exame, nota-se lesão com bordas irregulares, hipercrômica (tons de preto, castanho e cinza), medindo 12 mm no maior diâmetro. Qual a principal hipótese diagnóstica?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Carcinoma espinocelular.",
+        "rationale": "Incorreta. O CEC costuma se apresentar como lesão ulcerada ou verrucosa, mais associada a áreas de exposição solar crônica ou mucosas; não é caracterizado pela pigmentação heterogênea (preto/castanho/cinza) descrita no caso."
+      },
+      {
+        "letter": "B",
+        "text": "Carcinoma basocelular.",
+        "rationale": "Incorreta. O CBC classicamente se apresenta como lesão perolada, com telangiectasias, mais comum em áreas fotoexpostas da face; não corresponde à lesão pigmentada, heterogênea e de bordas irregulares na planta do pé descrita no caso."
+      },
+      {
+        "letter": "C",
+        "text": "Queratose actínica.",
+        "rationale": "Incorreta. A ceratose actínica é uma lesão pré-maligna, tipicamente áspera e escamosa, associada a dano solar crônico em áreas expostas; não é uma lesão pigmentada de bordas irregulares como a descrita, e a região plantar não é uma área tipicamente fotoexposta."
+      },
+      {
+        "letter": "D",
+        "text": "Melanoma.",
+        "rationale": "CORRETA. A lesão apresenta critérios clássicos do ABCDE do melanoma (bordas irregulares, cor variada/heterogênea, diâmetro maior que 6mm, evolução com sangramento e prurido); a localização plantar, uma área NÃO exposta ao sol, é característica do subtipo acral lentiginoso, mais comum em trabalhadores expostos a atrito repetido e, proporcionalmente, em peles mais pigmentadas."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Lesão pigmentada heterogênea, bordas irregulares, na planta do pé (área NÃO exposta ao sol) = suspeitar melanoma acral lentiginoso. (Fonte: Revalida 2025/2)"
+  },
+  {
+    "id": 215,
+    "code": "EXT-LESO-02",
+    "category": "LesoesCutaneas",
+    "subcategory": "Lesão facial pigmentada de crescimento recente",
+    "difficulty": "Intermediária",
+    "prompt": "Homem, 58 anos, trabalhador da construção civil, procura o ambulatório com história de lesão na face há aproximadamente 4 anos, com crescimento nos últimos 2 meses. Nega outras lesões cutâneas ou comorbidades. Ao exame, a lesão é descrita como enegrecida/heterogênea, de bordas irregulares e levemente assimétrica, na região frontal. Qual a hipótese diagnóstica mais provável?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Melanoma.",
+        "rationale": "CORRETA. A combinação de pigmentação heterogênea/enegrecida, bordas irregulares, assimetria e, principalmente, a evolução com crescimento recente após anos de estabilidade (critério E do ABCDE) é fortemente sugestiva de melanoma, especialmente em uma lesão de longa data que muda de comportamento."
+      },
+      {
+        "letter": "B",
+        "text": "Nevo melanocítico.",
+        "rationale": "Incorreta. Um nevo melanocítico benigno tende a ser simétrico, de bordas regulares e cor uniforme, e não costuma apresentar crescimento ou mudança de comportamento após anos de estabilidade; a mudança recente descrita no caso é um sinal de alerta contra essa hipótese."
+      },
+      {
+        "letter": "C",
+        "text": "Ceratose seborreica.",
+        "rationale": "Incorreta. A ceratose seborreica tipicamente tem aspecto \"colado à pele\", superfície verrucosa/graxenta e bordas bem definidas, sem o padrão de assimetria e irregularidade descrito; embora seja comum em pessoas mais velhas, o padrão de crescimento recente e a heterogeneidade de cor não são típicos dela."
+      },
+      {
+        "letter": "D",
+        "text": "Carcinoma espinocelular.",
+        "rationale": "Incorreta. O CEC tipicamente se apresenta como lesão ulcerada, crostosa ou verrucosa, não como lesão pigmentada heterogênea; o padrão descrito é mais consistente com uma lesão melanocítica atípica do que com uma neoplasia de queratinócitos."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Lesão pigmentada com anos de estabilidade que MUDA (cresce) recentemente = sinal de alerta clássico para melanoma (critério E do ABCDE). (Fonte: Revalida 2023/2)"
+  },
+  {
+    "id": 216,
+    "code": "EXT-LESO-03",
+    "category": "LesoesCutaneas",
+    "subcategory": "ABCDE do melanoma - lesão de antebraço",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher branca, 47 anos, procura a unidade básica de saúde queixando-se de lesão escurecida, assimétrica e de bordas irregulares em antebraço esquerdo. Relata que, nas últimas quatro semanas, a lesão tem aumentado de tamanho e se tornado pruriginosa, com episódio de pequeno sangramento local. Qual a principal hipótese diagnóstica?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Melanoma.",
+        "rationale": "CORRETA. O caso reúne múltiplos critérios do ABCDE: Assimetria, Bordas irregulares, coloração escurecida (Cor), e Evolução recente com crescimento, prurido e sangramento; esse conjunto de achados é fortemente sugestivo de melanoma, exigindo biópsia excisional para confirmação."
+      },
+      {
+        "letter": "B",
+        "text": "Queratoacantoma.",
+        "rationale": "Incorreta. O ceratoacantoma tipicamente se apresenta como uma lesão de crescimento rápido com uma cratera central queratósica, não como uma lesão pigmentada assimétrica de bordas irregulares como a descrita."
+      },
+      {
+        "letter": "C",
+        "text": "Carcinoma basocelular.",
+        "rationale": "Incorreta. O CBC classicamente se apresenta como lesão perolada com telangiectasias, mais comum na face; não é tipicamente uma lesão pigmentada, assimétrica, de bordas irregulares e com sangramento como a descrita no antebraço."
+      },
+      {
+        "letter": "D",
+        "text": "Carcinoma espinocelular.",
+        "rationale": "Incorreta. O CEC tipicamente se apresenta como lesão ulcerada, crostosa ou verrucosa, associada a áreas de exposição solar crônica; a descrição de lesão escurecida, assimétrica, de bordas irregulares e evolução recente é mais característica de uma lesão melanocítica atípica."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Lesão escurecida + assimétrica + bordas irregulares + cresceu/mudou em semanas = ABCDE completo, pensar em melanoma. (Fonte: Revalida 2025/1)"
+  },
+  {
+    "id": 217,
+    "code": "EXT-SEG-01",
+    "category": "CirurgiaSegura",
+    "subcategory": "Checklist de cirurgia segura - etapa de identificação (Sign In)",
+    "difficulty": "Intermediária",
+    "prompt": "Paciente de 48 anos, com fratura de fêmur fechada há 12 horas, estável, sem comorbidades, será submetido à fixação definitiva da fratura. Antes da indução anestésica, a equipe realiza a etapa de identificação do checklist de cirurgia segura. O que deve ser verificado pela equipe nessa etapa, visando à segurança do paciente?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Apresentação de cada membro da equipe pelo nome e função; e confirmação de vaga em unidade de terapia intensiva para o pós-operatório imediato.",
+        "rationale": "Incorreta. A apresentação da equipe por nome e função é elemento do time out (antes da incisão), não da etapa de identificação antes da indução; confirmação de vaga em UTI também não é item padrão dessa etapa específica."
+      },
+      {
+        "letter": "B",
+        "text": "Confirmação da explicação do procedimento e seus riscos para os familiares do paciente; e verificação da existência de equipe de acolhimento hospitalar.",
+        "rationale": "Incorreta. O consentimento e a explicação de riscos devem ser confirmados diretamente com o PACIENTE (quando possível), não apenas com familiares; verificação de \"equipe de acolhimento hospitalar\" não é item do checklist de identificação."
+      },
+      {
+        "letter": "C",
+        "text": "Contagem de materiais a serem utilizados, como pinças e compressas; e checagem do funcionamento adequado de aparelhagem radiológica e anestésica.",
+        "rationale": "Incorreta. A contagem de compressas e instrumentais é elemento do sign out (ao final da cirurgia), não da etapa de identificação antes da indução anestésica."
+      },
+      {
+        "letter": "D",
+        "text": "Demarcação da lateralidade (direita ou esquerda) do procedimento; avaliação de alergias conhecidas; e checagem da existência do termo de consentimento para o procedimento.",
+        "rationale": "CORRETA. A etapa de identificação (sign in), realizada antes da indução anestésica, inclui classicamente: confirmação da identidade do paciente, demarcação do sítio/lateralidade do procedimento, verificação de alergias conhecidas, e checagem do termo de consentimento assinado, todos itens de segurança essenciais antes de prosseguir para a anestesia."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Sign in (antes da indução anestésica): identidade, marcação de lateralidade, alergias, termo de consentimento. (Fonte: Revalida 2023/2)"
+  },
+  {
+    "id": 218,
+    "code": "EXT-SEG-02",
+    "category": "CirurgiaSegura",
+    "subcategory": "ERAS/ACERTO - alimentação pós-operatória precoce",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher, 45 anos, sem comorbidades, submetida a colecistectomia videolaparoscópica eletiva, sem complicações, durando cerca de 40 minutos. No pós-operatório imediato, está hemodinamicamente estável, sem náusea, com dor abdominal leve. De acordo com os protocolos ERAS e ACERTO, qual a conduta adequada quanto à alimentação dessa paciente?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Início de dieta líquida via oral após 6 horas do procedimento.",
+        "rationale": "Incorreta. Aguardar 6 horas para iniciar até mesmo dieta líquida contraria o princípio de alimentação precoce do ERAS/ACERTO, especialmente em uma paciente estável, sem náusea e com dor apenas leve."
+      },
+      {
+        "letter": "B",
+        "text": "Início imediato de dieta via oral, de acordo com sua vontade.",
+        "rationale": "Incorreta. Embora o início precoce esteja correto, o protocolo recomenda uma progressão estruturada conforme a tolerância clínica da paciente, não simplesmente \"a critério da vontade\" sem qualquer direcionamento clínico."
+      },
+      {
+        "letter": "C",
+        "text": "Início de dieta via oral após 24 horas do procedimento.",
+        "rationale": "Incorreta. Esperar 24 horas para iniciar a dieta é exatamente a conduta antiga que o ERAS/ACERTO busca substituir; para uma paciente estável e sem complicações, esse atraso não é justificado."
+      },
+      {
+        "letter": "D",
+        "text": "Início imediato de dieta via oral, de forma escalonada.",
+        "rationale": "CORRETA. Os protocolos ERAS/ACERTO recomendam a alimentação pós-operatória precoce, iniciada já no pós-operatório imediato para pacientes estáveis e sem complicações, com progressão escalonada (gradual) conforme a tolerância clínica, em vez de aguardar retorno de flatos/ruídos hidroaéreos ou impor um intervalo fixo de horas."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "ERAS/ACERTO: alimentação precoce, iniciada logo no pós-op, em progressão escalonada conforme tolerância (não esperar horas fixas nem flatos). (Fonte: Revalida 2025/1)"
   }
 ];
 
