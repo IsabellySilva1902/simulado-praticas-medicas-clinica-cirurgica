@@ -200,12 +200,12 @@
             Simulado Completo: Praticas Cirurgicas
           </h2>
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-            200 questoes autorais, no estilo ENAMED, cobrindo os 7 assuntos das aulas: Perioperatorio, Contaminacao e Infeccao do Sitio Cirurgico, Queimaduras, REMIT, Cicatrizacao de Feridas, Lesoes Cutaneas e Cirurgia Segura e ERAS. As questoes sao sorteadas em ordem aleatoria a cada tentativa, como em uma prova real, e os assuntos podem se cruzar nos enunciados (diagnostico diferencial entre aulas).
+            <span id="introQuestionCount">200</span> questoes, no estilo ENAMED, cobrindo os 7 assuntos das aulas: Perioperatorio, Contaminacao e Infeccao do Sitio Cirurgico, Queimaduras, REMIT, Cicatrizacao de Feridas, Lesoes Cutaneas e Cirurgia Segura e ERAS. As questoes sao sorteadas em ordem aleatoria a cada tentativa, como em uma prova real, e os assuntos podem se cruzar nos enunciados (diagnostico diferencial entre aulas).
           </p>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm font-medium text-slate-200">
             <div class="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-sm">
-              <span class="block text-xl font-bold text-white mb-0.5">200</span>
+              <span id="statQuestionCount" class="block text-xl font-bold text-white mb-0.5">200</span>
               Questoes no total (7 assuntos)
             </div>
             <div class="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-sm">
@@ -218,6 +218,18 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Prova dedicada: Turma B 2026.2 -->
+      <div class="bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-5 sm:p-6 text-white shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-emerald-100 mb-1">Sessao separada - fora dos 7 assuntos padrao</p>
+          <h3 class="text-lg sm:text-xl font-bold mb-1">Prova da Turma B (2026.2)</h3>
+          <p class="text-sm text-emerald-50 leading-relaxed">20 questoes transcritas da prova aplicada em outra turma, com gabarito refeito e comentado. Nao entra no sorteio dos assuntos acima - e uma prova a parte, so essas 20 questoes.</p>
+        </div>
+        <button id="btnStartTurmaBExam" type="button" class="px-6 py-3 rounded-xl bg-white text-emerald-700 font-bold text-sm shadow-md hover:bg-emerald-50 active:scale-98 transition-all whitespace-nowrap flex-shrink-0">
+          Fazer esta prova (20 questoes)
+        </button>
       </div>
 
       <!-- Settings Card -->
@@ -6950,7 +6962,7 @@
     "category": "Perioperatorio",
     "subcategory": "Jejum pré-operatório (ERAS/ACERTO)",
     "difficulty": "Intermediária",
-    "prompt": "Homem, 38 anos, avaliado como risco anestésico ASA II, será submetido a colecistectomia videolaparoscópica eletiva, programada para iniciar às 16h. Segundo o Projeto ACERTO e as recomendações da ERAS Society, qual conduta deve ser adotada quanto ao jejum pré-operatório?",
+    "prompt": "(Revalida 2026/1) Homem, 38 anos, avaliado como risco anestésico ASA II, será submetido a colecistectomia videolaparoscópica eletiva, programada para iniciar às 16h. Segundo o Projeto ACERTO e as recomendações da ERAS Society, qual conduta deve ser adotada quanto ao jejum pré-operatório?",
     "options": [
       {
         "letter": "A",
@@ -6974,7 +6986,7 @@
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Líquidos claros com carboidrato: liberados até 2h antes da indução (ERAS/ACERTO). Sólidos exigem jejum bem mais longo. (Fonte: Revalida 2026/1)"
+    "clinicalPointers": "Líquidos claros com carboidrato: liberados até 2h antes da indução (ERAS/ACERTO). Sólidos exigem jejum bem mais longo."
   },
   {
     "id": 202,
@@ -6982,7 +6994,7 @@
     "category": "Perioperatorio",
     "subcategory": "Íleo pós-operatório x obstrução mecânica",
     "difficulty": "Avançada",
-    "prompt": "Homem, 58 anos, no 2º dia de pós-operatório de hemicolectomia esquerda por neoplasia de cólon, apresenta distensão abdominal progressiva, náuseas e vômitos ocasionais, sem eliminação de flatos ou fezes desde a cirurgia. Está em bom estado geral, afebril, hemodinamicamente estável. Abdome globoso, timpânico, indolor, sem sinais de peritonite; ruídos hidroaéreos diminuídos. Radiografia de abdome mostra distensão difusa de alças de delgado e cólon, SEM níveis hidroaéreos. A conduta recomendada nesse momento é:",
+    "prompt": "(ENAMED 2026) Homem, 58 anos, no 2º dia de pós-operatório de hemicolectomia esquerda por neoplasia de cólon, apresenta distensão abdominal progressiva, náuseas e vômitos ocasionais, sem eliminação de flatos ou fezes desde a cirurgia. Está em bom estado geral, afebril, hemodinamicamente estável. Abdome globoso, timpânico, indolor, sem sinais de peritonite; ruídos hidroaéreos diminuídos. Radiografia de abdome mostra distensão difusa de alças de delgado e cólon, SEM níveis hidroaéreos. A conduta recomendada nesse momento é:",
     "options": [
       {
         "letter": "A",
@@ -7006,7 +7018,7 @@
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Distensão difusa (delgado+cólon) SEM níveis hidroaéreos + paciente estável = íleo funcional, não obstrução mecânica. Conduta: deambulação precoce + dieta conforme aceitação (ERAS). (Fonte: ENAMED 2026)"
+    "clinicalPointers": "Distensão difusa (delgado+cólon) SEM níveis hidroaéreos + paciente estável = íleo funcional, não obstrução mecânica. Conduta: deambulação precoce + dieta conforme aceitação (ERAS)."
   },
   {
     "id": 203,
@@ -7014,7 +7026,7 @@
     "category": "Perioperatorio",
     "subcategory": "Febre pós-operatória - fonte pulmonar",
     "difficulty": "Avançada",
-    "prompt": "Homem, 75 anos, diabético (metformina) e tabagista, no 4º dia de pós-operatório de colecistectomia videolaparoscópica (alta no 2º dia, evoluindo bem), é levado à urgência por confusão mental de início recente. Ao exame: Glasgow 14, temperatura 38,6°C, pulso 120 bpm, FR 26 irpm, SatO2 93% com cateter nasal, crepitações em base pulmonar direita, PA 96x60 mmHg, abdome indolor com ferida cirúrgica em bom estado, sem secreção purulenta. Qual a conduta adequada?",
+    "prompt": "(Revalida 2022/2) Homem, 75 anos, diabético (metformina) e tabagista, no 4º dia de pós-operatório de colecistectomia videolaparoscópica (alta no 2º dia, evoluindo bem), é levado à urgência por confusão mental de início recente. Ao exame: Glasgow 14, temperatura 38,6°C, pulso 120 bpm, FR 26 irpm, SatO2 93% com cateter nasal, crepitações em base pulmonar direita, PA 96x60 mmHg, abdome indolor com ferida cirúrgica em bom estado, sem secreção purulenta. Qual a conduta adequada?",
     "options": [
       {
         "letter": "A",
@@ -7038,7 +7050,7 @@
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Confusão mental no idoso pós-operatório + febre + achado pulmonar = pensar em delirium secundário a infecção sistêmica, não causa neurológica primária. (Fonte: Revalida 2022/2)"
+    "clinicalPointers": "Confusão mental no idoso pós-operatório + febre + achado pulmonar = pensar em delirium secundário a infecção sistêmica, não causa neurológica primária."
   },
   {
     "id": 204,
@@ -7046,7 +7058,7 @@
     "category": "Perioperatorio",
     "subcategory": "Febre pós-operatória - foco intra-abdominal",
     "difficulty": "Avançada",
-    "prompt": "Homem, 53 anos, submetido a laparotomia de emergência por diverticulite perfurada (sigmoidectomia + colostomia a Hartmann) há 7 dias. Desde o 2º dia de pós-operatório, apresenta febre intermitente de até 39°C e distensão abdominal persistente, sem conseguir se alimentar. Ao exame: febre 38,9°C, FC 114, FR 22, PA 110x70, abdome distendido, hipertimpânico, doloroso à palpação profunda difusa, ferida operatória limpa e seca sem sinais flogísticos, colostomia com bom aspecto. Em uso de ciprofloxacino e metronidazol IV. Leucócitos 21.500 com 4% de bastões. Qual o diagnóstico mais provável e a investigação mais adequada?",
+    "prompt": "(Revalida 2023/2) Homem, 53 anos, submetido a laparotomia de emergência por diverticulite perfurada (sigmoidectomia + colostomia a Hartmann) há 7 dias. Desde o 2º dia de pós-operatório, apresenta febre intermitente de até 39°C e distensão abdominal persistente, sem conseguir se alimentar. Ao exame: febre 38,9°C, FC 114, FR 22, PA 110x70, abdome distendido, hipertimpânico, doloroso à palpação profunda difusa, ferida operatória limpa e seca sem sinais flogísticos, colostomia com bom aspecto. Em uso de ciprofloxacino e metronidazol IV. Leucócitos 21.500 com 4% de bastões. Qual o diagnóstico mais provável e a investigação mais adequada?",
     "options": [
       {
         "letter": "A",
@@ -7070,7 +7082,7 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Febre persistente pós-op + distensão/dor abdominal + ferida limpa = pensar em foco intra-abdominal (abscesso/coleção), não na ferida. (Fonte: Revalida 2023/2)"
+    "clinicalPointers": "Febre persistente pós-op + distensão/dor abdominal + ferida limpa = pensar em foco intra-abdominal (abscesso/coleção), não na ferida."
   },
   {
     "id": 205,
@@ -7078,7 +7090,7 @@
     "category": "ISC",
     "subcategory": "Timing da antibioticoprofilaxia",
     "difficulty": "Intermediária",
-    "prompt": "Uma paciente de 25 anos foi submetida à ressecção eletiva de segmento de cólon sigmoide (cerca de 10 cm) por estenose intestinal por endometriose. No pré-operatório, foi feito apenas preparo de cólon distal com clister. A cirurgia durou 4 horas, sem extravasamento de fezes na abertura colônica, com anastomose primária. Para esse caso, a antibioticoprofilaxia adequada deve ser feita:",
+    "prompt": "(Revalida 2020) Uma paciente de 25 anos foi submetida à ressecção eletiva de segmento de cólon sigmoide (cerca de 10 cm) por estenose intestinal por endometriose. No pré-operatório, foi feito apenas preparo de cólon distal com clister. A cirurgia durou 4 horas, sem extravasamento de fezes na abertura colônica, com anastomose primária. Para esse caso, a antibioticoprofilaxia adequada deve ser feita:",
     "options": [
       {
         "letter": "A",
@@ -7102,7 +7114,7 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Antibioticoprofilaxia: iniciar até 1h antes, repicar conforme a meia-vida durante a cirurgia, sem necessidade de prolongar rotineiramente além do ato operatório. (Fonte: Revalida 2020)"
+    "clinicalPointers": "Antibioticoprofilaxia: iniciar até 1h antes, repicar conforme a meia-vida durante a cirurgia, sem necessidade de prolongar rotineiramente além do ato operatório."
   },
   {
     "id": 206,
@@ -7110,7 +7122,7 @@
     "category": "ISC",
     "subcategory": "Febre pós-operatória - infecção do sítio cirúrgico profundo",
     "difficulty": "Avançada",
-    "prompt": "Paciente, 68 anos, submetido a hemicolectomia esquerda por neoplasia com anastomose término-terminal, sem intercorrências. No 5º dia de pós-operatório, refere dor leve abdominal. Ao exame: hidratado, temperatura 38,1°C, FC 96, PA 100x70, FR 20, abdome distendido 1+/4+, ruídos hidroaéreos presentes, timpanismo generalizado, dor leve à palpação profunda generalizada, ferida operatória limpa sem sinais flogísticos. Qual a origem mais provável da febre?",
+    "prompt": "(Revalida 2024/1) Paciente, 68 anos, submetido a hemicolectomia esquerda por neoplasia com anastomose término-terminal, sem intercorrências. No 5º dia de pós-operatório, refere dor leve abdominal. Ao exame: hidratado, temperatura 38,1°C, FC 96, PA 100x70, FR 20, abdome distendido 1+/4+, ruídos hidroaéreos presentes, timpanismo generalizado, dor leve à palpação profunda generalizada, ferida operatória limpa sem sinais flogísticos. Qual a origem mais provável da febre?",
     "options": [
       {
         "letter": "A",
@@ -7134,7 +7146,7 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Ferida superficial limpa NÃO exclui infecção PROFUNDA/cavitária; abdome distendido e doloroso após anastomose sugere foco profundo. (Fonte: Revalida 2024/1)"
+    "clinicalPointers": "Ferida superficial limpa NÃO exclui infecção PROFUNDA/cavitária; abdome distendido e doloroso após anastomose sugere foco profundo."
   },
   {
     "id": 207,
@@ -7142,7 +7154,7 @@
     "category": "ISC",
     "subcategory": "Antibioticoprofilaxia - dose, momento e duração",
     "difficulty": "Intermediária",
-    "prompt": "Paciente, 67 anos, 72 kg, será submetido a correção eletiva de hérnia incisional (cirurgia limpa, sem contaminação, sem entrada em trato colonizado). Creatinina normal. Qual a antibioticoprofilaxia adequada?",
+    "prompt": "(Revalida 2024/1) Paciente, 67 anos, 72 kg, será submetido a correção eletiva de hérnia incisional (cirurgia limpa, sem contaminação, sem entrada em trato colonizado). Creatinina normal. Qual a antibioticoprofilaxia adequada?",
     "options": [
       {
         "letter": "A",
@@ -7166,7 +7178,7 @@
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Cirurgia limpa: cefazolina 2g (3g se >120kg), até 60min antes, repicar conforme meia-vida, descontinuar ao fechar a pele (sem metronidazol, sem prolongar). (Fonte: Revalida 2024/1)"
+    "clinicalPointers": "Cirurgia limpa: cefazolina 2g (3g se >120kg), até 60min antes, repicar conforme meia-vida, descontinuar ao fechar a pele (sem metronidazol, sem prolongar)."
   },
   {
     "id": 208,
@@ -7174,7 +7186,7 @@
     "category": "ISC",
     "subcategory": "Cirurgia limpa sem prótese - antibioticoprofilaxia não indicada",
     "difficulty": "Intermediária",
-    "prompt": "Mulher, 45 anos, hipertensa controlada, IMC 20 kg/m², é submetida a correção de hérnia umbilical em regime ambulatorial, sob anestesia local. O anel herniário tem cerca de 1,5 cm de diâmetro, e o cirurgião opta pela correção sem uso de tela de reforço. Em relação ao uso profilático de antibióticos, é correto afirmar que a:",
+    "prompt": "(Revalida 2024/2) Mulher, 45 anos, hipertensa controlada, IMC 20 kg/m², é submetida a correção de hérnia umbilical em regime ambulatorial, sob anestesia local. O anel herniário tem cerca de 1,5 cm de diâmetro, e o cirurgião opta pela correção sem uso de tela de reforço. Em relação ao uso profilático de antibióticos, é correto afirmar que a:",
     "options": [
       {
         "letter": "A",
@@ -7198,7 +7210,7 @@
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Cirurgia limpa sem prótese: antibioticoprofilaxia geralmente NÃO indicada. O motivo certo é a classificação da cirurgia, não anestesia/regime/comorbidade isolada. (Fonte: Revalida 2024/2)"
+    "clinicalPointers": "Cirurgia limpa sem prótese: antibioticoprofilaxia geralmente NÃO indicada. O motivo certo é a classificação da cirurgia, não anestesia/regime/comorbidade isolada."
   },
   {
     "id": 209,
@@ -7206,7 +7218,7 @@
     "category": "Queimaduras",
     "subcategory": "Queimadura elétrica e mioglobinúria",
     "difficulty": "Avançada",
-    "prompt": "Mulher, 43 anos, 80 kg, sofreu queimadura elétrica na perna há 1 hora, com pequenas lesões visíveis (5 cm na coxa direita e 2 cm no pé, próximo ao maléolo). Sinais vitais estáveis. Após hidratação venosa e sondagem vesical, notou-se diurese de 80 mL de urina um pouco mais escura que o habitual. Hemograma e creatinina normais. Após internação e curativo das lesões, a conduta imediata adequada é indicar:",
+    "prompt": "(Revalida 2020) Mulher, 43 anos, 80 kg, sofreu queimadura elétrica na perna há 1 hora, com pequenas lesões visíveis (5 cm na coxa direita e 2 cm no pé, próximo ao maléolo). Sinais vitais estáveis. Após hidratação venosa e sondagem vesical, notou-se diurese de 80 mL de urina um pouco mais escura que o habitual. Hemograma e creatinina normais. Após internação e curativo das lesões, a conduta imediata adequada é indicar:",
     "options": [
       {
         "letter": "A",
@@ -7230,7 +7242,7 @@
       }
     ],
     "correctLetter": "C",
-    "clinicalPointers": "Queimadura elétrica com urina escura = suspeitar mioglobinúria. Hidratar com Ringer lactato visando diurese mais alta (~100-200 mL/h no adulto), não a meta padrão. (Fonte: Revalida 2020)"
+    "clinicalPointers": "Queimadura elétrica com urina escura = suspeitar mioglobinúria. Hidratar com Ringer lactato visando diurese mais alta (~100-200 mL/h no adulto), não a meta padrão."
   },
   {
     "id": 211,
@@ -7238,7 +7250,7 @@
     "category": "Queimaduras",
     "subcategory": "Queimadura elétrica - trajeto da corrente",
     "difficulty": "Intermediária",
-    "prompt": "Homem, 35 anos, pedreiro, sofreu queimadura ao encostar em um fio elétrico durante manutenção em casa, caindo da laje. Apresentou lesão de entrada no ombro direito e lesão de saída no pé esquerdo. Foi encontrado desacordado, recuperando a consciência no trajeto ao hospital, com amnésia do episódio mas orientado quanto à própria identificação. Queixa-se de dor na região lateral direita do tórax e na hemiface direita. Assinale a alternativa correta sobre esse caso.",
+    "prompt": "(Revalida 2022/2) Homem, 35 anos, pedreiro, sofreu queimadura ao encostar em um fio elétrico durante manutenção em casa, caindo da laje. Apresentou lesão de entrada no ombro direito e lesão de saída no pé esquerdo. Foi encontrado desacordado, recuperando a consciência no trajeto ao hospital, com amnésia do episódio mas orientado quanto à própria identificação. Queixa-se de dor na região lateral direita do tórax e na hemiface direita. Assinale a alternativa correta sobre esse caso.",
     "options": [
       {
         "letter": "A",
@@ -7262,7 +7274,7 @@
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Queimadura elétrica: lesões de entrada/saída NÃO refletem o trajeto real da corrente; dano profundo pode ser bem maior que o visível na pele. (Fonte: Revalida 2022/2)"
+    "clinicalPointers": "Queimadura elétrica: lesões de entrada/saída NÃO refletem o trajeto real da corrente; dano profundo pode ser bem maior que o visível na pele."
   },
   {
     "id": 212,
@@ -7270,7 +7282,7 @@
     "category": "Queimaduras",
     "subcategory": "Critério de transferência - passagem de corrente",
     "difficulty": "Intermediária",
-    "prompt": "Adolescente, 12 anos, relata choque elétrico ao manusear um cabo de energia, sem perda de consciência, estável hemodinamicamente. Ao exame: roupas chamuscadas, queimadura de 1º grau em todo o membro superior direito e no pescoço, além de uma área esbranquiçada, profunda, de 1 cm, no calcâneo direito. O médico solicita transferência para uma unidade de tratamento de queimados. Qual critério justifica essa transferência?",
+    "prompt": "(Revalida 2023/1) Adolescente, 12 anos, relata choque elétrico ao manusear um cabo de energia, sem perda de consciência, estável hemodinamicamente. Ao exame: roupas chamuscadas, queimadura de 1º grau em todo o membro superior direito e no pescoço, além de uma área esbranquiçada, profunda, de 1 cm, no calcâneo direito. O médico solicita transferência para uma unidade de tratamento de queimados. Qual critério justifica essa transferência?",
     "options": [
       {
         "letter": "A",
@@ -7294,7 +7306,7 @@
       }
     ],
     "correctLetter": "C",
-    "clinicalPointers": "Queimadura elétrica com passagem de corrente pelo corpo (pontos de entrada/saída distintos) transfere, mesmo em baixa voltagem. (Fonte: Revalida 2023/1)"
+    "clinicalPointers": "Queimadura elétrica com passagem de corrente pelo corpo (pontos de entrada/saída distintos) transfere, mesmo em baixa voltagem."
   },
   {
     "id": 213,
@@ -7302,7 +7314,7 @@
     "category": "Queimaduras",
     "subcategory": "Classificação e reposição volêmica pela regra dos nove",
     "difficulty": "Avançada",
-    "prompt": "Homem, 30 anos, 90 kg, sofre queimadura ao acender uma churrasqueira, com lesões em face anterior do tronco, face anterior e posterior de ambos os membros superiores, e face anterior de um membro inferior. Consciente, com muita dor. Ao exame: eritema em todas as áreas atingidas, com múltiplas bolhas, principalmente em tórax, antebraços, mãos, perna e pé. Considerando a regra dos nove preconizada pelo ATLS, qual a classificação da queimadura e a reposição volêmica indicada?",
+    "prompt": "(Revalida 2024/2) Homem, 30 anos, 90 kg, sofre queimadura ao acender uma churrasqueira, com lesões em face anterior do tronco, face anterior e posterior de ambos os membros superiores, e face anterior de um membro inferior. Consciente, com muita dor. Ao exame: eritema em todas as áreas atingidas, com múltiplas bolhas, principalmente em tórax, antebraços, mãos, perna e pé. Considerando a regra dos nove preconizada pelo ATLS, qual a classificação da queimadura e a reposição volêmica indicada?",
     "options": [
       {
         "letter": "A",
@@ -7326,7 +7338,7 @@
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Bolhas = 2º grau (não 3º). SCQ >20% no adulto = grave/grande queimado. Parkland: metade do volume total nas 8h iniciais, metade nas 16h seguintes. (Fonte: Revalida 2024/2)"
+    "clinicalPointers": "Bolhas = 2º grau (não 3º). SCQ >20% no adulto = grave/grande queimado. Parkland: metade do volume total nas 8h iniciais, metade nas 16h seguintes."
   },
   {
     "id": 214,
@@ -7334,7 +7346,7 @@
     "category": "LesoesCutaneas",
     "subcategory": "Melanoma acral (localização plantar)",
     "difficulty": "Intermediária",
-    "prompt": "Paciente de 58 anos, trabalhador rural, procura o ambulatório de dermatologia com queixa de sangramento frequente em lesão pruriginosa na região plantar direita há 30 dias. Ao exame, nota-se lesão com bordas irregulares, hipercrômica (tons de preto, castanho e cinza), medindo 12 mm no maior diâmetro. Qual a principal hipótese diagnóstica?",
+    "prompt": "(Revalida 2025/2) Paciente de 58 anos, trabalhador rural, procura o ambulatório de dermatologia com queixa de sangramento frequente em lesão pruriginosa na região plantar direita há 30 dias. Ao exame, nota-se lesão com bordas irregulares, hipercrômica (tons de preto, castanho e cinza), medindo 12 mm no maior diâmetro. Qual a principal hipótese diagnóstica?",
     "options": [
       {
         "letter": "A",
@@ -7358,7 +7370,7 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Lesão pigmentada heterogênea, bordas irregulares, na planta do pé (área NÃO exposta ao sol) = suspeitar melanoma acral lentiginoso. (Fonte: Revalida 2025/2)"
+    "clinicalPointers": "Lesão pigmentada heterogênea, bordas irregulares, na planta do pé (área NÃO exposta ao sol) = suspeitar melanoma acral lentiginoso."
   },
   {
     "id": 215,
@@ -7366,7 +7378,7 @@
     "category": "LesoesCutaneas",
     "subcategory": "Lesão facial pigmentada de crescimento recente",
     "difficulty": "Intermediária",
-    "prompt": "Homem, 58 anos, trabalhador da construção civil, procura o ambulatório com história de lesão na face há aproximadamente 4 anos, com crescimento nos últimos 2 meses. Nega outras lesões cutâneas ou comorbidades. Ao exame, a lesão é descrita como enegrecida/heterogênea, de bordas irregulares e levemente assimétrica, na região frontal. Qual a hipótese diagnóstica mais provável?",
+    "prompt": "(Revalida 2023/2) Homem, 58 anos, trabalhador da construção civil, procura o ambulatório com história de lesão na face há aproximadamente 4 anos, com crescimento nos últimos 2 meses. Nega outras lesões cutâneas ou comorbidades. Ao exame, a lesão é descrita como enegrecida/heterogênea, de bordas irregulares e levemente assimétrica, na região frontal. Qual a hipótese diagnóstica mais provável?",
     "options": [
       {
         "letter": "A",
@@ -7390,7 +7402,7 @@
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Lesão pigmentada com anos de estabilidade que MUDA (cresce) recentemente = sinal de alerta clássico para melanoma (critério E do ABCDE). (Fonte: Revalida 2023/2)"
+    "clinicalPointers": "Lesão pigmentada com anos de estabilidade que MUDA (cresce) recentemente = sinal de alerta clássico para melanoma (critério E do ABCDE)."
   },
   {
     "id": 216,
@@ -7398,7 +7410,7 @@
     "category": "LesoesCutaneas",
     "subcategory": "ABCDE do melanoma - lesão de antebraço",
     "difficulty": "Intermediária",
-    "prompt": "Mulher branca, 47 anos, procura a unidade básica de saúde queixando-se de lesão escurecida, assimétrica e de bordas irregulares em antebraço esquerdo. Relata que, nas últimas quatro semanas, a lesão tem aumentado de tamanho e se tornado pruriginosa, com episódio de pequeno sangramento local. Qual a principal hipótese diagnóstica?",
+    "prompt": "(Revalida 2025/1) Mulher branca, 47 anos, procura a unidade básica de saúde queixando-se de lesão escurecida, assimétrica e de bordas irregulares em antebraço esquerdo. Relata que, nas últimas quatro semanas, a lesão tem aumentado de tamanho e se tornado pruriginosa, com episódio de pequeno sangramento local. Qual a principal hipótese diagnóstica?",
     "options": [
       {
         "letter": "A",
@@ -7422,7 +7434,7 @@
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Lesão escurecida + assimétrica + bordas irregulares + cresceu/mudou em semanas = ABCDE completo, pensar em melanoma. (Fonte: Revalida 2025/1)"
+    "clinicalPointers": "Lesão escurecida + assimétrica + bordas irregulares + cresceu/mudou em semanas = ABCDE completo, pensar em melanoma."
   },
   {
     "id": 217,
@@ -7430,7 +7442,7 @@
     "category": "CirurgiaSegura",
     "subcategory": "Checklist de cirurgia segura - etapa de identificação (Sign In)",
     "difficulty": "Intermediária",
-    "prompt": "Paciente de 48 anos, com fratura de fêmur fechada há 12 horas, estável, sem comorbidades, será submetido à fixação definitiva da fratura. Antes da indução anestésica, a equipe realiza a etapa de identificação do checklist de cirurgia segura. O que deve ser verificado pela equipe nessa etapa, visando à segurança do paciente?",
+    "prompt": "(Revalida 2023/2) Paciente de 48 anos, com fratura de fêmur fechada há 12 horas, estável, sem comorbidades, será submetido à fixação definitiva da fratura. Antes da indução anestésica, a equipe realiza a etapa de identificação do checklist de cirurgia segura. O que deve ser verificado pela equipe nessa etapa, visando à segurança do paciente?",
     "options": [
       {
         "letter": "A",
@@ -7454,7 +7466,7 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Sign in (antes da indução anestésica): identidade, marcação de lateralidade, alergias, termo de consentimento. (Fonte: Revalida 2023/2)"
+    "clinicalPointers": "Sign in (antes da indução anestésica): identidade, marcação de lateralidade, alergias, termo de consentimento."
   },
   {
     "id": 218,
@@ -7462,7 +7474,7 @@
     "category": "CirurgiaSegura",
     "subcategory": "ERAS/ACERTO - alimentação pós-operatória precoce",
     "difficulty": "Intermediária",
-    "prompt": "Mulher, 45 anos, sem comorbidades, submetida a colecistectomia videolaparoscópica eletiva, sem complicações, durando cerca de 40 minutos. No pós-operatório imediato, está hemodinamicamente estável, sem náusea, com dor abdominal leve. De acordo com os protocolos ERAS e ACERTO, qual a conduta adequada quanto à alimentação dessa paciente?",
+    "prompt": "(Revalida 2025/1) Mulher, 45 anos, sem comorbidades, submetida a colecistectomia videolaparoscópica eletiva, sem complicações, durando cerca de 40 minutos. No pós-operatório imediato, está hemodinamicamente estável, sem náusea, com dor abdominal leve. De acordo com os protocolos ERAS e ACERTO, qual a conduta adequada quanto à alimentação dessa paciente?",
     "options": [
       {
         "letter": "A",
@@ -7486,7 +7498,647 @@
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "ERAS/ACERTO: alimentação precoce, iniciada logo no pós-op, em progressão escalonada conforme tolerância (não esperar horas fixas nem flatos). (Fonte: Revalida 2025/1)"
+    "clinicalPointers": "ERAS/ACERTO: alimentação precoce, iniciada logo no pós-op, em progressão escalonada conforme tolerância (não esperar horas fixas nem flatos)."
+  },
+  {
+    "id": 219,
+    "code": "NOVA-01",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Contaminação e ISC · Classificação e antibioticoprofilaxia",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher de 68 anos será submetida a artroplastia total de joelho por artrose. Não há infecção local ou à distância. O procedimento envolve colocação de prótese, sem abertura dos tratos respiratório, digestivo ou geniturinário, e transcorre sem quebra da técnica asséptica. Qual associação entre potencial de contaminação e indicação de antimicrobiano está correta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Cirurgia limpa, com indicação de antibioticoprofilaxia em razão da colocação de prótese.",
+        "rationale": "CORRETA. Sem entrada em trato colonizado e sem quebra de técnica, a cirurgia é classificada como limpa; porém, a colocação de prótese é uma das exceções reconhecidas em que a antibioticoprofilaxia é indicada mesmo em cirurgia limpa, pelo risco e pela gravidade de uma eventual infecção relacionada ao material protético."
+      },
+      {
+        "letter": "B",
+        "text": "Cirurgia limpa-contaminada, com antibioticoprofilaxia, pois a colocação de prótese modifica a classificação da ferida.",
+        "rationale": "Incorreta. A presença de prótese não altera a classificação quanto ao potencial de contaminação (que depende de entrada em trato colonizado e quebra de técnica, não da presença de material protético); a cirurgia continua sendo limpa."
+      },
+      {
+        "letter": "C",
+        "text": "Cirurgia limpa, sem indicação de antibioticoprofilaxia, pois não há abertura de tratos colonizados.",
+        "rationale": "Incorreta. Embora a classificação como limpa esteja correta, a conclusão de que não há indicação de profilaxia ignora justamente a exceção da colocação de prótese, que justifica a antibioticoprofilaxia mesmo em cirurgia limpa."
+      },
+      {
+        "letter": "D",
+        "text": "Cirurgia contaminada, com antibioticoterapia, pois a presença de material protético equivale a contaminação estabelecida.",
+        "rationale": "Incorreta. A presença de prótese não equivale a contaminação estabelecida; além disso, sem infecção presente, o que se indica é profilaxia (prevenção), não antibioticoterapia (tratamento de infecção já instalada)."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Cirurgia limpa + prótese = uma das exceções que justificam antibioticoprofilaxia mesmo sem contaminação."
+  },
+  {
+    "id": 220,
+    "code": "NOVA-02",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Cirurgia Segura e ERAS · Contagem de compressas - divergência",
+    "difficulty": "Intermediária",
+    "prompt": "Ao final de uma laparotomia, a contagem aponta uma compressa a menos. Uma nova contagem confirma a divergência. O paciente está estável, e a busca inicial não localizou o material nas mesas nem nos recipientes da sala. O cirurgião afirma não ter visto nenhuma compressa na cavidade. Qual conduta oferece maior segurança?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Manter a divergência comunicada à equipe, revisar sistematicamente o campo e obter imagem intraoperatória se o material permanecer não localizado.",
+        "rationale": "CORRETA. Diante de uma contagem divergente confirmada, a conduta mais segura é comunicar o achado a toda a equipe, revisar sistematicamente o campo cirúrgico e, se o material ainda não for localizado, obter uma imagem radiográfica intraoperatória antes do fechamento, para descartar a retenção de corpo estranho (gossypiboma) com segurança, mesmo que o cirurgião não tenha visto nada na cavidade."
+      },
+      {
+        "letter": "B",
+        "text": "Registrar provável erro da contagem inicial e encerrar a busca após a segunda conferência.",
+        "rationale": "Incorreta. Assumir que houve erro na contagem inicial sem confirmação objetiva (como uma imagem) é uma conduta arriscada, que pode deixar um corpo estranho retido sem detecção."
+      },
+      {
+        "letter": "C",
+        "text": "Concluir o fechamento e realizar investigação apenas se surgirem dor ou febre no pós-operatório.",
+        "rationale": "Incorreta. Aguardar sintomas para investigar uma possível compressa retida expõe o paciente a um risco evitável; a investigação (idealmente por imagem) deve ocorrer ANTES do fechamento, não ser postergada para depois que complicações já tenham surgido."
+      },
+      {
+        "letter": "D",
+        "text": "Considerar a inspeção visual do cirurgião suficiente para corrigir o registro e concluir o procedimento.",
+        "rationale": "Incorreta. A inspeção visual isolada não é suficiente diante de uma contagem confirmadamente divergente; a segurança exige revisão sistemática e, se necessário, confirmação por imagem antes de encerrar o procedimento."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Contagem divergente confirmada: revisar sistematicamente e, se não localizar, imagem intraoperatória ANTES de fechar."
+  },
+  {
+    "id": 221,
+    "code": "NOVA-03",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Contaminação e ISC · Tratamento de ISC superficial",
+    "difficulty": "Intermediária",
+    "prompt": "No sexto dia após exérese de lipoma no tronco, paciente imunocompetente apresenta pequena coleção purulenta restrita à pele e ao subcutâneo, sob dois pontos da incisão. Há discreto eritema junto às bordas, sem celulite extensa, necrose, febre ou taquicardia. Não há prótese nem comprometimento profundo. Qual conduta inicial é mais adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Reforçar a sutura para impedir drenagem pela ferida e associar antisséptico tópico.",
+        "rationale": "Incorreta. Reforçar a sutura mantém a coleção purulenta fechada, impedindo sua drenagem; a conduta correta diante de uma coleção purulenta é justamente abri-la e drená-la, não tentar contê-la."
+      },
+      {
+        "letter": "B",
+        "text": "Iniciar antibiótico intravenoso de amplo espectro e observar antes de manipular a incisão.",
+        "rationale": "Incorreta. Não há sinais sistêmicos (afebril, sem taquicardia, sem celulite extensa) que justifiquem antibiótico intravenoso de amplo espectro; além disso, adiar a manipulação da ferida atrasa a drenagem, que é a conduta central."
+      },
+      {
+        "letter": "C",
+        "text": "Manter os pontos e iniciar antibiótico oral, aguardando reabsorção espontânea da coleção.",
+        "rationale": "Incorreta. Coleções purulentas não se reabsorvem espontaneamente; a drenagem mecânica (abertura da ferida) é necessária, não apenas antibiótico oral com conduta expectante."
+      },
+      {
+        "letter": "D",
+        "text": "Retirar os pontos necessários, abrir e drenar a coleção, com cuidados locais e reavaliação, sem antibiótico sistêmico automático.",
+        "rationale": "CORRETA. O tratamento da infecção de sítio cirúrgico superficial é a drenagem (abertura dos pontos necessários, drenagem da coleção), associada a cuidados locais e reavaliação; sem sinais sistêmicos (paciente imunocompetente, afebril, sem celulite extensa), não há indicação automática de antibiótico sistêmico, que fica reservado a casos com repercussão sistêmica, imunossupressão ou risco de sequelas."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "ISC superficial: drenar (retirar pontos, abrir), cuidados locais. Antibiótico sistêmico NÃO é automático, só se houver repercussão sistêmica/imunossupressão."
+  },
+  {
+    "id": 222,
+    "code": "NOVA-04",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Queimaduras · Reposição volêmica pré-hospitalar (ABLS)",
+    "difficulty": "Avançada",
+    "prompt": "Equipe do SAMU atende homem de 35 anos com queimaduras térmicas extensas, visivelmente superiores a 20% da superfície corporal. Via aérea pérvia, ventilação adequada, sem sinais de choque ou hemorragia associada. Ainda não foi possível determinar seu peso nem calcular precisamente a área queimada. Obtido acesso venoso, qual conduta de hidratação inicial é mais adequada durante o transporte, conforme a abordagem pré-hospitalar do ABLS?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Iniciar Ringer lactato, preferencialmente aquecido, a 500 mL/h, com reavaliação e ajuste posterior.",
+        "rationale": "CORRETA. No atendimento pré-hospitalar, quando ainda não é possível calcular precisamente peso e SCQ, inicia-se a reposição com Ringer lactato (preferencialmente aquecido) em taxa fixa por faixa etária; para adultos (14 anos ou mais), a taxa inicial é 500 mL/h, sendo reavaliada e ajustada assim que dados mais precisos estiverem disponíveis no hospital."
+      },
+      {
+        "letter": "B",
+        "text": "Aguardar a pesagem e o cálculo definitivo da área queimada no hospital para iniciar a infusão.",
+        "rationale": "Incorreta. A reposição volêmica pré-hospitalar não deve aguardar o cálculo hospitalar preciso; ela é iniciada empiricamente, em taxa fixa por faixa etária, justamente para não atrasar o início da hidratação em um grande queimado."
+      },
+      {
+        "letter": "C",
+        "text": "Iniciar Ringer lactato a 125 mL/h, utilizando a mesma velocidade inicial para todas as faixas etárias.",
+        "rationale": "Incorreta. A taxa de 125 mL/h corresponde à faixa pediátrica (5 anos ou menos); adultos (14 anos ou mais) iniciam com 500 mL/h. As taxas pré-hospitalares SÃO diferentes por faixa etária, não uma velocidade única para todas as idades."
+      },
+      {
+        "letter": "D",
+        "text": "Administrar 2.000 mL de Ringer lactato em bolus, independentemente dos achados de perfusão.",
+        "rationale": "Incorreta. A reposição pré-hospitalar do grande queimado segue uma taxa contínua por hora (não um bolus fixo), e deve considerar os achados de perfusão do paciente, não ser administrada de forma independente deles."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Pré-hospitalar (ABLS), sem peso/SCQ calculados: taxa fixa por idade. Adulto (>=14a): 500 mL/h Ringer lactato."
+  },
+  {
+    "id": 223,
+    "code": "NOVA-05",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Cirurgia Segura e ERAS · Tricotomia - prevenção de lesões cutâneas",
+    "difficulty": "Intermediária",
+    "prompt": "Antes de uma operação eletiva, a equipe verifica que os pelos na região da incisão dificultarão a fixação do campo e a execução do procedimento. O paciente ainda não fez tricotomia. Qual orientação oferece a melhor prevenção de lesões cutâneas associadas ao preparo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Aparar os pelos necessários com equipamento elétrico apropriado, próximo ao procedimento, preservando a integridade da pele.",
+        "rationale": "CORRETA. A tricotomia, quando necessária, deve ser feita com aparador elétrico (não lâmina), realizada próxima ao horário do procedimento, preservando a integridade da pele e minimizando o risco de microlesões que aumentam a chance de infecção do sítio cirúrgico."
+      },
+      {
+        "letter": "B",
+        "text": "Raspar a região com lâmina imediatamente antes da antissepsia, para obter superfície completamente lisa.",
+        "rationale": "Incorreta. O uso de lâmina, mesmo que próximo ao procedimento, causa microlesões na pele que aumentam o risco de infecção do sítio cirúrgico; o método preferido é o aparador elétrico, não a lâmina."
+      },
+      {
+        "letter": "C",
+        "text": "Retirar os pelos por depilação com cera na manhã da operação, evitando fios residuais junto ao campo.",
+        "rationale": "Incorreta. A depilação com cera não é o método recomendado para preparo do campo cirúrgico, podendo causar irritação ou microtrauma cutâneo; o método padrão é o aparador elétrico."
+      },
+      {
+        "letter": "D",
+        "text": "Realizar raspagem ampla com lâmina na véspera, permitindo que o eritema desapareça antes da incisão.",
+        "rationale": "Incorreta. A lâmina na véspera é justamente a prática a evitar: mesmo que o eritema visível desapareça, a microlesão já causada aumenta o risco de infecção do sítio cirúrgico."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Tricotomia: só se necessária, com aparador ELÉTRICO, próximo ao procedimento. Nunca lâmina (nem na véspera, nem no dia)."
+  },
+  {
+    "id": 224,
+    "code": "NOVA-06",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Lesões Cutâneas · Melanoma - margem e linfonodo sentinela pelo Breslow",
+    "difficulty": "Avançada",
+    "prompt": "Mulher de 52 anos realizou biópsia excisional de uma lesão pigmentada na coxa, com margem clínica de 1 mm. O exame histopatológico revelou melanoma invasivo com espessura de Breslow de 0,6 mm, sem ulceração, sem mitoses identificadas e sem invasão linfovascular. As margens estão livres, e a espessura foi determinada de forma confiável. Não há linfonodos suspeitos ao exame físico. Qual é a conduta mais adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Ampliar a excisão com margem clínica de 2 cm, sem indicação rotineira de biópsia do linfonodo sentinela.",
+        "rationale": "Incorreta. A margem de 2 cm é reservada a melanomas com Breslow acima de 2 mm; para Breslow de 0,6 mm (entre 0,01 e 1,00 mm), a margem recomendada é de 1 cm, não 2 cm."
+      },
+      {
+        "letter": "B",
+        "text": "Manter acompanhamento clínico, sem ampliação, pois as margens da biópsia estão livres.",
+        "rationale": "Incorreta. Mesmo com margens livres na biópsia excisional inicial, a ampliação da margem conforme o índice de Breslow permanece indicada como conduta oncológica padrão; a margem da biópsia diagnóstica não substitui a margem terapêutica definitiva."
+      },
+      {
+        "letter": "C",
+        "text": "Ampliar a excisão com margem clínica de 1 cm e realizar biópsia do linfonodo sentinela de rotina.",
+        "rationale": "Incorreta. A margem de 1 cm está correta, mas a pesquisa de linfonodo sentinela não é rotineira aqui: nenhum dos critérios que a indicam está presente (Breslow não ultrapassa 1 mm, sem ulceração, sem alto índice mitótico, sem invasão linfovascular)."
+      },
+      {
+        "letter": "D",
+        "text": "Ampliar a excisão com margem clínica de 1 cm, sem indicação rotineira de biópsia do linfonodo sentinela.",
+        "rationale": "CORRETA. Para Breslow entre 0,01 e 1,00 mm, a margem cirúrgica recomendada é de 1 cm. Como não há ulceração, alto índice mitótico ou invasão linfovascular, e o Breslow não ultrapassa 1 mm, não há indicação rotineira de pesquisa de linfonodo sentinela."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Breslow 0,01-1,00mm: margem 1cm. Linfonodo sentinela só se Breslow>1mm OU ulceração OU alto índice mitótico OU invasão linfovascular."
+  },
+  {
+    "id": 225,
+    "code": "NOVA-07",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "REMIT · Resposta endócrina ao trauma - oligúria pós-operatória",
+    "difficulty": "Intermediária",
+    "prompt": "No primeiro dia após uma operação abdominal de grande porte, um paciente apresenta redução discreta da diurese. A sonda vesical está pérvia, a bexiga está vazia, e a avaliação não identifica sangramento, hipotensão ou sinais de hipovolemia. Considerando a resposta endócrina ao trauma cirúrgico, qual alteração hormonal pode contribuir para a retenção de água e sódio nesse período?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Aumento de ADH e de aldosterona, favorecendo, respectivamente, a reabsorção de água e de sódio.",
+        "rationale": "CORRETA. Na resposta endócrino-metabólica ao trauma (REMIT), tanto o ADH quanto a aldosterona se elevam: o ADH aumenta a reabsorção de água nos túbulos renais, e a aldosterona aumenta a reabsorção de sódio (e água associada), contribuindo para a oligúria observada no pós-operatório mesmo sem hipovolemia real."
+      },
+      {
+        "letter": "B",
+        "text": "Aumento de ADH e redução de aldosterona, com maior reabsorção de água e menor retenção de sódio.",
+        "rationale": "Incorreta. A aldosterona também se ELEVA (não reduz) na resposta ao trauma; a redução de aldosterona não é o padrão esperado nesse contexto."
+      },
+      {
+        "letter": "C",
+        "text": "Redução de ADH e de aldosterona, com aumento da eliminação renal de água e sódio.",
+        "rationale": "Incorreta. Ambos os hormônios se elevam (não reduzem) na REMIT; uma redução de ambos geraria maior diurese, o oposto da oligúria descrita no caso."
+      },
+      {
+        "letter": "D",
+        "text": "Redução de ADH e aumento de aldosterona, com menor reabsorção de água e maior retenção de sódio.",
+        "rationale": "Incorreta. O ADH também se eleva (não reduz) na resposta ao trauma; a queda isolada do ADH não é o padrão esperado nesse período."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "REMIT: ADH aumentado (retém água) + aldosterona aumentada (retém sódio/água) = contribuem para oligúria pós-op sem hipovolemia real."
+  },
+  {
+    "id": 226,
+    "code": "NOVA-08",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Lesões Cutâneas · Ceratose actínica - lesão pré-maligna",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher de 70 anos, de pele clara e com exposição solar ocupacional prolongada, apresenta múltiplas pequenas placas ásperas no dorso das mãos e na fronte. São eritematosas, com escamas aderentes, e algumas são mais fáceis de perceber ao toque do que à inspeção. Qual associação entre diagnóstico provável e potencial de evolução está correta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Dermatofibroma, com possibilidade de progressão para carcinoma basocelular.",
+        "rationale": "Incorreta. O dermatofibroma é um nódulo firme intradérmico, geralmente relacionado a microtrauma prévio, sem essa associação com exposição solar ocupacional nem esse padrão de placas ásperas e escamosas."
+      },
+      {
+        "letter": "B",
+        "text": "Ceratose seborreica, com transformação habitual em melanoma.",
+        "rationale": "Incorreta. A ceratose seborreica tem aspecto \"colado à pele\" e graxento, não escamas aderentes ásperas; além disso, não há transformação habitual em melanoma associada a essa lesão."
+      },
+      {
+        "letter": "C",
+        "text": "Ceratose actínica, com possibilidade de progressão para carcinoma espinocelular.",
+        "rationale": "CORRETA. A apresentação (pele clara, exposição solar prolongada, placas ásperas com escamas aderentes sobre base eritematosa, mais palpáveis que visíveis) é característica da ceratose actínica, lesão pré-maligna com potencial reconhecido de progressão para carcinoma espinocelular invasivo."
+      },
+      {
+        "letter": "D",
+        "text": "Acrocórdon, com transformação habitual em carcinoma espinocelular.",
+        "rationale": "Incorreta. O acrocórdon é uma lesão pedunculada e macia, benigna, sem relação com exposição solar nem potencial de transformação maligna."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Pele clara + sol + placas ásperas com escamas aderentes = ceratose actínica, pode progredir para CEC."
+  },
+  {
+    "id": 227,
+    "code": "NOVA-09",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Cicatrização de Feridas · Macrófagos - papel central na cicatrização",
+    "difficulty": "Intermediária",
+    "prompt": "Em um modelo experimental de reparação cutânea, a redução de determinada população celular prejudica tanto a remoção de detritos quanto a liberação de sinais que recrutam fibroblastos e estimulam a formação de novos vasos. A coagulação inicial permanece preservada. Qual população celular tem o papel central descrito?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Plaquetas.",
+        "rationale": "Incorreta. As plaquetas atuam na hemostasia/coagulação inicial, que o enunciado descreve como preservada; não são a população responsável pela remoção de detritos e pela sinalização para fibroblastos e angiogênese."
+      },
+      {
+        "letter": "B",
+        "text": "Macrófagos.",
+        "rationale": "CORRETA. Os macrófagos são a população celular essencial (não substituível) na cicatrização, responsáveis pelo debridamento (remoção de detritos, via enzimas como colagenase e elastase) e pela liberação de citocinas e fatores de crescimento que recrutam fibroblastos e estimulam a angiogênese, exatamente o papel duplo descrito no enunciado."
+      },
+      {
+        "letter": "C",
+        "text": "Neutrófilos.",
+        "rationale": "Incorreta. Os neutrófilos atuam principalmente na fagocitose e ação antimicrobiana inicial, sendo substituíveis pelos macrófagos; não são classicamente descritos como a população central para o recrutamento de fibroblastos e a angiogênese."
+      },
+      {
+        "letter": "D",
+        "text": "Queratinócitos.",
+        "rationale": "Incorreta. Os queratinócitos atuam na epitelização (migração sobre o tecido de granulação), não na remoção de detritos nem na sinalização que recruta fibroblastos e estimula angiogênese."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Macrófago: célula essencial (não substituível) - debridamento + sinalização para fibroblastos e angiogênese."
+  },
+  {
+    "id": 228,
+    "code": "NOVA-10",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Perioperatório · Medicações a manter no perioperatório",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher de 60 anos, com hipertensão e dislipidemia controladas, será submetida a colecistectomia eletiva. Usa anlodipino 5 mg/dia (bloqueador dos canais de cálcio) e rosuvastatina 10 mg à noite (estatina). Está assintomática, com pressão arterial de 128x78 mmHg, sem efeitos adversos das medicações. Qual orientação pré-operatória é mais adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Manter o anlodipino e a rosuvastatina nos horários habituais, conforme as orientações de administração durante o jejum.",
+        "rationale": "CORRETA. Bloqueadores de canal de cálcio e estatinas estão classicamente entre os medicamentos que devem ser MANTIDOS no perioperatório, inclusive no dia da cirurgia, tomados nos horários habituais (com pequeno gole de água, respeitando as orientações de jejum para líquidos claros)."
+      },
+      {
+        "letter": "B",
+        "text": "Suspender o anlodipino e a rosuvastatina na véspera da operação.",
+        "rationale": "Incorreta. Ambos os medicamentos devem ser mantidos, não suspensos; não há indicação de suspensão na véspera para essa classe de anti-hipertensivo nem para estatinas."
+      },
+      {
+        "letter": "C",
+        "text": "Suspender o anlodipino no dia da operação e manter a rosuvastatina.",
+        "rationale": "Incorreta. O anlodipino (bloqueador de canal de cálcio) está entre os anti-hipertensivos que devem ser MANTIDOS; a suspensão no dia da cirurgia é uma conduta mais discutida para IECA/BRA, não para bloqueadores de canal de cálcio."
+      },
+      {
+        "letter": "D",
+        "text": "Manter o anlodipino e suspender a rosuvastatina sete dias antes da operação.",
+        "rationale": "Incorreta. A estatina deve ser mantida no perioperatório, não suspensa; não há indicação de suspensão de rosuvastatina antes de cirurgia eletiva nesse contexto."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Manter no perioperatório: bloqueador de canal de cálcio e estatina, nos horários habituais."
+  },
+  {
+    "id": 229,
+    "code": "NOVA-11",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Perioperatório · Consentimento informado",
+    "difficulty": "Intermediária",
+    "prompt": "Na consulta pré-operatória, paciente lúcida e capaz apresenta um termo de consentimento já assinado. Ao conversar com o cirurgião, ela afirma acreditar estar autorizando apenas exames, e desconhece os riscos da operação e a possibilidade de tratamento não cirúrgico. O procedimento é eletivo. Qual conduta é mais adequada antes de prosseguir?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Confirmar a autenticidade da assinatura e manter a programação, pois o documento comprova a compreensão do tratamento.",
+        "rationale": "Incorreta. A autenticidade da assinatura não comprova compreensão; a própria paciente relata não entender o que estava autorizando, o que invalida a ideia de que o documento, por si só, comprova consentimento informado válido."
+      },
+      {
+        "letter": "B",
+        "text": "Explicar indicação, riscos e alternativas em linguagem acessível, verificar a compreensão e documentar a decisão da paciente.",
+        "rationale": "CORRETA. Diante da fala da paciente revelando falta de compreensão real, a conduta adequada é refazer o processo de consentimento informado: explicar indicação, riscos e alternativas (incluindo tratamento não cirúrgico) em linguagem acessível, verificar se ela realmente compreendeu, e documentar sua decisão, respeitando sua autonomia."
+      },
+      {
+        "letter": "C",
+        "text": "Solicitar que um familiar assine outro termo, substituindo a manifestação da paciente por uma autorização familiar.",
+        "rationale": "Incorreta. A paciente é lúcida e capaz; sendo assim, é dela (não de um familiar) que o consentimento deve ser obtido, após explicação adequada."
+      },
+      {
+        "letter": "D",
+        "text": "Apresentar novamente o mesmo termo e solicitar nova assinatura, mantendo as explicações para depois da internação.",
+        "rationale": "Incorreta. Apenas colher nova assinatura sem antes fornecer as explicações necessárias não resolve o problema identificado; a explicação deve preceder a assinatura, não ser adiada para depois da internação."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Consentimento informado exige comunicação + compreensão verificada + decisão documentada, não só uma assinatura no papel."
+  },
+  {
+    "id": 230,
+    "code": "NOVA-12",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Queimaduras · Queimadura por escaldadura - classificação e conduta",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher de 28 anos, previamente saudável, sofreu queimadura por água quente na face lateral da coxa há duas horas. A lesão ocupa cerca de 2% da superfície corporal e apresenta bolhas, leito róseo e úmido, dor intensa e branqueamento à digitopressão. Não há sinais de infecção ou outras lesões. Qual associação entre profundidade e conduta inicial é mais adequada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Segundo grau superficial; limpeza, analgesia, curativo apropriado com antibiótico tópico.",
+        "rationale": "CORRETA. Bolhas, leito róseo e úmido, dor intensa e branqueamento à digitopressão são achados clássicos do 2º grau superficial (que para na derme papilar); a conduta é limpeza, analgesia e curativo com antibiótico tópico, sem necessidade de antibiótico sistêmico nem excisão."
+      },
+      {
+        "letter": "B",
+        "text": "Segundo grau profundo; analgesia e hidratação da pele, dispensando proteção do leito com curativo.",
+        "rationale": "Incorreta. O 2º grau profundo teria leito mais pálido e seco, com dor menos intensa (não o leito róseo/úmido e muito doloroso descrito); além disso, dispensar a proteção do leito com curativo não é conduta adequada para nenhum grau de queimadura."
+      },
+      {
+        "letter": "C",
+        "text": "Segundo grau superficial; limpeza, analgesia, curativo apropriado e antibiótico oral profilático.",
+        "rationale": "Incorreta. Embora a profundidade esteja correta, antibiótico sistêmico (oral) profilático não é indicado de rotina em queimaduras; a conduta padrão é o antibiótico tópico associado ao curativo."
+      },
+      {
+        "letter": "D",
+        "text": "Segundo grau profundo; limpeza, analgesia e programação de excisão com enxertia precoce.",
+        "rationale": "Incorreta. A profundidade correta é 2º grau superficial (não profundo); excisão e enxertia precoce são reservadas a queimaduras mais profundas (2º grau profundo extenso ou 3º/4º grau), não a esta lesão pequena e superficial."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Bolhas + leito róseo/úmido + muito doloroso + branqueia à digitopressão = 2º grau SUPERFICIAL. Antibiótico TÓPICO, não oral."
+  },
+  {
+    "id": 231,
+    "code": "NOVA-13",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Lesões Cutâneas · Cisto epidermoide",
+    "difficulty": "Intermediária",
+    "prompt": "Mulher de 43 anos apresenta nódulo de 2 cm no dorso, de crescimento lento e indolor há dois anos. A lesão é móvel sobre os planos profundos, mas está presa à pele em um pequeno orifício central. A paciente relata eliminação ocasional de material esbranquiçado, pastoso e de odor desagradável por esse orifício. Não há eritema, calor ou febre. Qual diagnóstico explica melhor o conjunto?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Abscesso cutâneo agudo.",
+        "rationale": "Incorreta. O quadro é de evolução lenta e crônica (dois anos), sem sinais inflamatórios agudos (sem eritema, calor ou febre), incompatível com um abscesso agudo."
+      },
+      {
+        "letter": "B",
+        "text": "Lipoma subcutâneo.",
+        "rationale": "Incorreta. O lipoma não apresenta orifício central nem eliminação de material caseoso; é tipicamente um nódulo amolecido, sem essa fixação pontual à pele."
+      },
+      {
+        "letter": "C",
+        "text": "Cisto epidermoide.",
+        "rationale": "CORRETA. O orifício central (ponto de origem folicular), a eliminação de material caseoso, pastoso e de odor desagradável, e a lesão móvel sobre planos profundos, mas presa à pele nesse ponto, são achados clássicos do cisto epidermoide (sebáceo)."
+      },
+      {
+        "letter": "D",
+        "text": "Dermatofibroma.",
+        "rationale": "Incorreta. O dermatofibroma é um nódulo firme intradérmico, sem orifício central nem eliminação de material caseoso, geralmente relacionado a microtrauma prévio."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Nódulo com orifício central + material caseoso malcheiroso = cisto epidermoide (sebáceo)."
+  },
+  {
+    "id": 232,
+    "code": "NOVA-14",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Perioperatório · Classificação ASA - DPOC com limitação funcional",
+    "difficulty": "Intermediária",
+    "prompt": "Homem de 64 anos será submetido à correção eletiva de hérnia. Apresenta doença pulmonar obstrutiva crônica com limitação importante para subir um lance de escadas, mas realiza o autocuidado. Não apresenta exacerbação recente, dispneia em repouso, insuficiência respiratória ou instabilidade clínica. Qual classificação do estado físico pela ASA melhor representa sua condição?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "ASA II, porque a ausência de exacerbação recente caracteriza a doença sistêmica como leve.",
+        "rationale": "Incorreta. Uma DPOC com limitação IMPORTANTE aos esforços (não conseguir subir um lance de escadas) não se qualifica como doença sistêmica leve; a ausência de exacerbação recente não muda essa gravidade funcional de base."
+      },
+      {
+        "letter": "B",
+        "text": "ASA I, porque o procedimento é eletivo e a condição respiratória está estável.",
+        "rationale": "Incorreta. ASA I é reservado a pacientes sem qualquer doença sistêmica; a presença de DPOC com limitação funcional importante já exclui essa categoria, independentemente do procedimento ser eletivo."
+      },
+      {
+        "letter": "C",
+        "text": "ASA IV, porque qualquer limitação aos esforços caracteriza ameaça constante à vida.",
+        "rationale": "Incorreta. ASA IV corresponde a doença sistêmica grave que representa ameaça CONSTANTE à vida; este paciente não tem dispneia em repouso, instabilidade clínica ou insuficiência respiratória, não preenchendo esse grau de gravidade."
+      },
+      {
+        "letter": "D",
+        "text": "ASA III, pela doença sistêmica grave com limitação funcional, sem ameaça constante à vida.",
+        "rationale": "CORRETA. ASA III corresponde a doença sistêmica grave com limitação funcional real, mas sem representar uma ameaça constante à vida; a DPOC com limitação importante aos esforços, porém sem dispneia em repouso, instabilidade ou insuficiência respiratória, se encaixa exatamente nessa categoria."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "ASA III: doença sistêmica GRAVE com limitação funcional, mas SEM ameaça constante à vida (isso é ASA IV)."
+  },
+  {
+    "id": 233,
+    "code": "NOVA-15",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Perioperatório · Exames pré-operatórios - paciente jovem sem fatores de risco",
+    "difficulty": "Intermediária",
+    "prompt": "Homem de 27 anos, sem comorbidades, sintomas ou uso de medicamentos, será submetido à retirada de pequena lesão cutânea sob anestesia local. A anamnese e o exame físico são normais, não há história de sangramento anormal, e a perda sanguínea prevista é mínima. Qual plano de exames pré-operatórios é o mais apropriado?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Solicitar eletrocardiograma porque o uso de anestésico local exige avaliação cardíaca complementar.",
+        "rationale": "Incorreta. O tipo de anestesia (local) não é, isoladamente, critério que exija eletrocardiograma; a indicação de ECG se baseia em idade e fatores de risco cardiovascular, ausentes neste paciente jovem e saudável."
+      },
+      {
+        "letter": "B",
+        "text": "Dispensar exames complementares de rotina, mantendo a avaliação orientada por achados clínicos e características da operação.",
+        "rationale": "CORRETA. Para um paciente jovem (abaixo de 40 anos), sem comorbidades ou fatores de risco, submetido a um procedimento de mínima complexidade e mínima perda sanguínea prevista, nenhum exame complementar é solicitado de rotina; a avaliação permanece orientada pelos achados clínicos e pelas características específicas da operação, não por um pacote fixo de exames."
+      },
+      {
+        "letter": "C",
+        "text": "Solicitar radiografia de tórax e função renal para excluir doenças silenciosas antes de liberar o procedimento.",
+        "rationale": "Incorreta. A radiografia de tórax pré-operatória é indicada em critérios específicos (tabagismo importante, IMC muito elevado, pneumopatia conhecida, idade avançada), nenhum presente neste paciente jovem e saudável."
+      },
+      {
+        "letter": "D",
+        "text": "Solicitar hemograma e coagulograma como rastreamento obrigatório para qualquer incisão.",
+        "rationale": "Incorreta. O coagulograma é reservado a pacientes com suspeita clínica de distúrbio de coagulação (história pessoal ou familiar sugestiva), não é obrigatório para qualquer incisão, independentemente do risco."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Jovem, sem fatores de risco, procedimento mínimo: nenhum exame de rotina; avaliação guiada pela clínica."
+  },
+  {
+    "id": 234,
+    "code": "NOVA-16",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Lesões Cutâneas · Corno cutâneo - a base é o que importa",
+    "difficulty": "Intermediária",
+    "prompt": "Homem de 76 anos apresenta projeção cutânea cônica e endurecida na orelha. A extremidade é formada por material queratósico, mas a base é larga, eritematosa e dolorosa. O fragmento enviado inicialmente para análise continha apenas a ponta, e mostrou hiperceratose. Qual a melhor interpretação desse resultado e o próximo passo diagnóstico?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "O fragmento não esclarece a lesão de origem; é necessário obter tecido da base para avaliação histológica.",
+        "rationale": "CORRETA. No corno cutâneo, a projeção queratósica em si não é diagnóstica; o que determina a natureza da lesão (benigna, pré-maligna ou maligna) é a BASE. Como apenas a ponta foi analisada (mostrando hiperceratose, um achado inespecífico), e a base é larga, eritematosa e dolorosa (achados de alerta), é necessário biopsiar especificamente a base para um diagnóstico conclusivo."
+      },
+      {
+        "letter": "B",
+        "text": "O resultado é conclusivo, desde que a projeção volte a crescer com o mesmo formato.",
+        "rationale": "Incorreta. O padrão de recrescimento da projeção não torna a biópsia da ponta conclusiva; a avaliação da base permanece necessária, independentemente do formato do recrescimento."
+      },
+      {
+        "letter": "C",
+        "text": "O achado confirma carcinoma invasivo e dispensa análise adicional da base.",
+        "rationale": "Incorreta. Hiperceratose (achado da ponta) não confirma, isoladamente, carcinoma invasivo; essa confirmação exigiria avaliação histológica da base, que ainda não foi obtida."
+      },
+      {
+        "letter": "D",
+        "text": "O achado confirma lesão benigna e permite encerrar a investigação da base.",
+        "rationale": "Incorreta. Hiperceratose da ponta não confirma benignidade, especialmente diante de uma base com achados de alerta (larga, eritematosa, dolorosa); a investigação da base não deve ser encerrada."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Corno cutâneo: a PONTA não é diagnóstica. O que importa é a BASE (aqui, com achados de alerta que exigem biópsia)."
+  },
+  {
+    "id": 235,
+    "code": "NOVA-17",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Cicatrização de Feridas · Segunda intenção - granulação e epitelização",
+    "difficulty": "Intermediária",
+    "prompt": "Uma pequena ferida cutânea com perda de substância está sendo acompanhada com curativos. Não houve sutura, enxerto ou retalho, e não está programada aproximação cirúrgica posterior. Ao longo das semanas, o leito é preenchido por tecido de granulação, as bordas se aproximam progressivamente, e o epitélio avança da periferia. Qual associação caracteriza esse processo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Terceira intenção, com fechamento dependente de sutura após o controle da contaminação.",
+        "rationale": "Incorreta. Não há sutura em nenhum momento deste caso (explicitamente ausente); a terceira intenção envolve justamente uma sutura tardia após limpeza da ferida, o que não ocorre aqui."
+      },
+      {
+        "letter": "B",
+        "text": "Regeneração integral, com restituição dos anexos cutâneos e ausência de cicatriz.",
+        "rationale": "Incorreta. Uma ferida com perda de substância que cicatriza por tecido de granulação resulta em CICATRIZ visível, não em regeneração integral sem cicatriz e com restituição completa dos anexos cutâneos."
+      },
+      {
+        "letter": "C",
+        "text": "Segunda intenção, com granulação, contração da ferida e epitelização periférica.",
+        "rationale": "CORRETA. Sem sutura, com preenchimento do leito por tecido de granulação, aproximação das bordas (contração) e avanço do epitélio a partir da periferia, esse é exatamente o processo de cicatrização por segunda intenção."
+      },
+      {
+        "letter": "D",
+        "text": "Primeira intenção, com fechamento dependente da coaptação inicial das bordas.",
+        "rationale": "Incorreta. A primeira intenção depende de aproximação cirúrgica imediata das bordas (por sutura), o que não ocorreu neste caso, tratado apenas com curativos."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Sem sutura + tecido de granulação + contração + epitelização periférica = segunda intenção."
+  },
+  {
+    "id": 236,
+    "code": "NOVA-18",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Queimaduras · Queimadura química por álcali",
+    "difficulty": "Intermediária",
+    "prompt": "Trabalhador derrama solução líquida de hidróxido de sódio sobre o antebraço. A manga está encharcada. Chega consciente, respirando normalmente e sem outras lesões. Há dor e eritema na área atingida. Após proteger a equipe contra contato com o produto, qual sequência de cuidado local é mais apropriada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Cobrir a manga com compressa seca e retirá-la depois que a dor estiver controlada.",
+        "rationale": "Incorreta. Manter a roupa contaminada em contato com a pele prolonga a exposição ao agente químico; a roupa contaminada deve ser retirada imediatamente, não após controle da dor."
+      },
+      {
+        "letter": "B",
+        "text": "Aplicar ácido diluído para neutralizar o produto e irrigar após a redução da alcalinidade.",
+        "rationale": "Incorreta. A neutralização química é contraindicada em queimaduras químicas: a reação entre ácido e álcali é exotérmica e pode aprofundar a lesão térmica, agravando o dano."
+      },
+      {
+        "letter": "C",
+        "text": "Retirar a roupa contaminada e irrigar abundantemente com água corrente, evitando neutralização química.",
+        "rationale": "CORRETA. A conduta correta em queimadura química é retirar imediatamente a roupa contaminada (removendo a fonte de exposição contínua) e irrigar abundantemente com água corrente, sem nunca tentar neutralizar quimicamente o agente, pelo risco de reação exotérmica que aprofunda a lesão."
+      },
+      {
+        "letter": "D",
+        "text": "Retirar a manga e aplicar pomada oleosa antes da irrigação para limitar a penetração do produto.",
+        "rationale": "Incorreta. Aplicar qualquer substância (incluindo pomada oleosa) antes da irrigação atrasa a diluição/remoção do agente químico e pode reter o produto contra a pele; a irrigação com água corrente deve ser imediata, sem essa etapa intermediária."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Queimadura química: retirar roupa contaminada + irrigar com água corrente abundante. NUNCA neutralizar quimicamente."
+  },
+  {
+    "id": 237,
+    "code": "NOVA-19",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Perioperatório · Retenção urinária pós-operatória",
+    "difficulty": "Intermediária",
+    "prompt": "Seis horas após hernioplastia sob raquianestesia, homem de 61 anos ainda não urinou. Recebeu opioide no pós-operatório, está hemodinamicamente estável e relata vontade de urinar acompanhada de dor suprapúbica. A palpação revela globo vesical, e a ultrassonografia à beira do leito estima 650 mL na bexiga. Qual conduta inicial melhor aborda a causa identificada?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Administrar nova expansão com cristaloide para estimular a produção renal de urina.",
+        "rationale": "Incorreta. Administrar mais fluidos aumentaria ainda mais a distensão de uma bexiga já cheia e sintomática, sem resolver o problema mecânico de retenção urinária."
+      },
+      {
+        "letter": "B",
+        "text": "Administrar furosemida para superar a redução transitória da filtração glomerular.",
+        "rationale": "Incorreta. O problema não é uma redução da filtração glomerular; é uma retenção urinária (mecânica/funcional, favorecida pela raquianestesia e pelo opioide). Administrar furosemida aumentaria a produção de urina para dentro de uma bexiga já distendida, agravando o quadro."
+      },
+      {
+        "letter": "C",
+        "text": "Providenciar esvaziamento vesical por cateterização e reavaliar a micção após a descompressão.",
+        "rationale": "CORRETA. Diante de globo vesical sintomático (650 mL, dor suprapúbica) após raquianestesia e uso de opioide, fatores que classicamente prejudicam o esvaziamento vesical no pós-operatório, a conduta é descomprimir a bexiga por cateterização e reavaliar a capacidade de micção espontânea após essa descompressão."
+      },
+      {
+        "letter": "D",
+        "text": "Manter observação até o dia seguinte, atribuindo a ausência de micção à retenção hormonal de água.",
+        "rationale": "Incorreta. O quadro é de retenção urinária mecânica/funcional por efeito da raquianestesia e do opioide sobre a bexiga, não uma questão de retenção hormonal de água; além disso, manter uma bexiga distendida e sintomática em observação até o dia seguinte, sem alívio, é conduta insegura."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Globo vesical sintomático pós-raqui + opioide = retenção urinária. Conduta: cateterizar para descomprimir, depois reavaliar."
+  },
+  {
+    "id": 238,
+    "code": "NOVA-20",
+    "category": "ProvaTurmaB20262",
+    "subcategory": "Queimaduras · Regra dos nove - cálculo da SCQ",
+    "difficulty": "Avançada",
+    "prompt": "Adulto apresenta queimaduras de espessura parcial em toda a face anterior do tronco, incluindo tórax e abdome, e em todo o membro superior direito, incluindo a mão. No membro inferior esquerdo há apenas eritema doloroso, sem bolhas ou perda da epiderme, compatível com queimadura de primeiro grau. Pela regra dos nove, qual superfície corporal queimada deve ser registrada para orientar a avaliação da gravidade?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "36%.",
+        "rationale": "Incorreta. Esse valor corresponderia a somar o tronco anterior E posterior (18%+18%), mas apenas a face ANTERIOR do tronco foi atingida neste caso; 36% superestima a área real."
+      },
+      {
+        "letter": "B",
+        "text": "27%.",
+        "rationale": "CORRETA. Pela regra dos nove: tronco anterior isolado = 18%; membro superior direito completo (frente e verso, incluindo a mão) = 9%; o membro inferior esquerdo teve apenas queimadura de PRIMEIRO grau, que não entra no cálculo da SCQ. Total: 18% + 9% = 27%."
+      },
+      {
+        "letter": "C",
+        "text": "18%.",
+        "rationale": "Incorreta. Esse valor considera apenas o tronco anterior, mas omite o membro superior direito completo (9%), que também deve ser somado."
+      },
+      {
+        "letter": "D",
+        "text": "22,5%.",
+        "rationale": "Incorreta. Esse valor não corresponde a nenhuma combinação correta das áreas descritas pela regra dos nove."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Tronco anterior isolado = 18%. Membro superior completo = 9%. 1º grau NÃO entra na SCQ. Total aqui: 18+9=27%."
   }
 ];
 
@@ -7497,8 +8149,14 @@
   "REMIT": "REMIT",
   "Cicatrizacao": "Cicatrização de Feridas",
   "LesoesCutaneas": "Lesões Cutâneas",
-  "CirurgiaSegura": "Cirurgia Segura e ERAS"
+  "CirurgiaSegura": "Cirurgia Segura e ERAS",
+  "ProvaTurmaB20262": "Prova da Turma B (2026.2)"
 };
+
+    // Os 7 assuntos oficiais das aulas (usados nos cartoes/contagens gerais do
+    // simulado). Categorias fora dessa lista (como provas extras/sessoes
+    // dedicadas) nao entram nesses totais nem no sorteio por assunto.
+    const MAIN_CATEGORIES = ['Perioperatorio', 'ISC', 'Queimaduras', 'REMIT', 'Cicatrizacao', 'LesoesCutaneas', 'CirurgiaSegura'];
 
     let currentQuestions = [];
     let currentIndex = 0;
@@ -7652,7 +8310,8 @@
     function renderCoverageUI() {
       const seenIds = loadSeenQuestionIds();
       const box = document.getElementById('coverageSummary');
-      const totalSeen = QUESTIONS_DATABASE.filter(q => seenIds.has(q.id)).length;
+      const mainQuestions = QUESTIONS_DATABASE.filter(q => MAIN_CATEGORIES.includes(q.category));
+      const totalSeen = mainQuestions.filter(q => seenIds.has(q.id)).length;
 
       if (totalSeen === 0) {
         box.classList.add('hidden');
@@ -7660,7 +8319,7 @@
       }
       box.classList.remove('hidden');
 
-      const total = QUESTIONS_DATABASE.length;
+      const total = mainQuestions.length;
       const overallPct = Math.round((totalSeen / total) * 100);
       document.getElementById('coverageOverallPct').textContent = `${totalSeen}/${total} (${overallPct}%)`;
       document.getElementById('coverageOverallBar').style.width = `${overallPct}%`;
@@ -8007,6 +8666,11 @@
       const sessionCode = sessionCodeInput.value.trim();
       const rng = sessionCode ? createSeededRandom(sessionCode) : Math.random;
       beginQuiz(pickBalancedQuestions(pool, count, rng, !sessionCode));
+    });
+
+    document.getElementById('btnStartTurmaBExam').addEventListener('click', () => {
+      const turmaBQuestions = QUESTIONS_DATABASE.filter(q => q.category === 'ProvaTurmaB20262');
+      beginQuiz(shuffleArray(turmaBQuestions, Math.random));
     });
 
     function renderPalette() {
@@ -8953,6 +9617,9 @@
     });
 
     // Inicializacao: tema salvo, link de convite (?codigo=&assuntos=&qtd=) e retomada de simulado.
+    const mainQuestionCount = QUESTIONS_DATABASE.filter(q => MAIN_CATEGORIES.includes(q.category)).length;
+    document.getElementById('introQuestionCount').textContent = mainQuestionCount;
+    document.getElementById('statQuestionCount').textContent = mainQuestionCount;
     applyDarkMode(safeLocalStorageGet(STORAGE_KEY_DARKMODE) === '1');
     renderHistoryUI();
     renderCoverageUI();
